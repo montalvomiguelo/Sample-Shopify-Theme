@@ -1,0 +1,28 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Backgrounds
+$colorBody: #ffffff;
+
+// Text colors
+$colorTextBody: #646464;
+$colorLink: #717C82;
+$colorLinkHover: #2E2E2E;
+$colorHeader: #507B96;
+$colorButton: #2B4759;
+
+// Font stacks
+$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Breakpoint and Grid Variables
+$viewportIncrement: 1px;
+
+$small: 480px;
+$medium: 768px;
+$large: 769px;
+
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;

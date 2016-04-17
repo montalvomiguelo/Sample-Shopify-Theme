@@ -1,0 +1,96 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// BEM selectors
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/*============================================================================
+  Prefixer mixin for generating vendor prefixes:
+    - Based on https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/addons/_prefixer.scss
+    - Usage:
+
+      // Input:
+      .element {
+        @include prefixer(transform, scale(1), ms webkit spec);
+      }
+
+      // Output:
+      .element {
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+==============================================================================*/
+
+@mixin prefixer($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      -webkit-#{$property}: $value;
+    } @else if $prefix == moz {
+      -moz-#{$property}: $value;
+    } @else if $prefix == ms {
+      -ms-#{$property}: $value;
+    } @else if $prefix == o {
+      -o-#{$property}: $value;
+    } @else if $prefix == spec {
+      #{$property}: $value;
+    } @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// Transitions
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*============================================================================
+  Dependency-free breakpoint mixin
+    - Based on http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+    - Usage docs: http://shopify.github.io/Timber/#sass-mixins
+==============================================================================*/
+$min: min-width;
+$max: max-width;
+@mixin at-query ($constraint_, $viewport1_, $viewport2_:null) {
+ $constraint: $constraint_; $viewport1: $viewport1_; $viewport2: $viewport2_;
+  @if type-of($constraint_) == number {
+    $viewport1 : $constraint_; $viewport2 : $viewport1_; $constraint : null;
+  }
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+
+// Appearance
+@mixin x-appearance ($value) {
+	-webkit-appearance: $value;
+	   -moz-appearance: $value;
+	        appearance: $value;
+}

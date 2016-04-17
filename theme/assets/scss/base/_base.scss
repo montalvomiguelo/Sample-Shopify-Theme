@@ -1,0 +1,146 @@
+*, input, :before, :after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: $colorBody;
+  color: $colorTextBody;
+  font-family: $bodyFontStack;
+  line-height: 1;
+  margin-bottom: 120px;
+}
+
+a, a:visited {
+  @include transition(all .3s ease);
+  color: $colorLink;
+  text-decoration: none;
+
+  &:hover {
+    color: $colorLinkHover;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $colorHeader;
+  font-family: $headerFontStack;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 1.3em;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  min-height: 52px;
+  text-align: center;
+
+  @include at-query($min, $postSmall) {
+    margin-bottom: 30px;
+  }
+
+  @include at-query($min, $large) {
+    font-size: 26px;
+    text-align: left;
+  }
+
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+ul, ol {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+input, textarea {
+  @include transition(all .3s ease);
+  @include x-appearance(none);
+  background: $colorBody;
+  border-radius: 2px;
+  border: 1px solid $colorLink;
+  color: $colorLink;
+  font-family: $bodyFontStack;
+  font-size: 14px;
+  padding: 8px 10px;
+
+  &:focus {
+    border: 1px solid $colorLinkHover;
+    color: $colorLinkHover;
+    outline: none;
+  }
+
+}
+
+input {
+  height: 50px;
+}
+
+button {
+  @include transition(all .3s ease);
+  border-radius: 2px;
+  background-color: $colorBody;
+  border: 1px solid $colorButton;
+  color: $colorButton;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $bodyFontStack;
+  font-size: 14px;
+  height: 50px;
+  line-height: 1;
+  outline: none;
+  padding: 8px 10px;
+  text-align: center;
+
+  &:hover, &:focus, &:active {
+    background-color: $colorButton;
+    border: 1px solid $colorButton;
+    color: $colorBody;
+  }
+}
+
+select {
+  @include transition(all .3s ease);
+  @include x-appearance(none);
+  background-color: $colorBody;
+  background: url(#{'{{ "arrow-down.svg" | asset_url }}'}) right 10px center no-repeat;
+  background-size: 13px 8px;
+  border-radius: 2px;
+  border: 1px solid $colorButton;
+  color: $colorButton;
+  cursor: pointer;
+  font-size: 14px;
+  height: 50px;
+  outline: 0;
+  padding: 8px 30px 8px 10px;
+}
+
+// Force option color (affects IE only)
+option {
+  background-color: #fff;
+  color: #000;
+}
