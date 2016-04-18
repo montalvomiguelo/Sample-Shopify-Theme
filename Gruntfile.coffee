@@ -132,11 +132,10 @@ module.exports = (grunt) ->
         tasks: ['newer:copy']
 
   # Production-specific configuration.
-  if IS_PRODUCTION
-    grunt.config 'newer'
-      options:
-        override: (detail, include) ->
-          include(true)
+  grunt.config 'newer'
+    options:
+      override: (detail, include) ->
+        include(true)
 
   # Load tasks made available through NPM.
   grunt.loadNpmTasks 'grunt-contrib-clean'
