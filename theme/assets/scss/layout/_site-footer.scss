@@ -1,0 +1,31 @@
+.site-footer {
+  background: $colorHeaderBg;
+  border-top: 1px solid $colorBorder;
+  bottom: 0;
+  font-size: 14px;
+  height: 160px;
+  margin-top: 20px;
+  position: absolute;
+  width: 100%;
+
+  @include at-query($min, $large) {
+    margin-top: 0;
+    height: 120px;
+  }
+
+  .wrap {
+    @include vertical-align();
+  }
+
+  @include element(about) {
+    a {
+      display: block;
+      margin-top: 15px;
+
+      @include at-query($min, $large) {
+        display: inline;
+        margin-top: 0;
+      }
+    }
+  }
+}
