@@ -4,12 +4,12 @@
 
 // BEM selectors
 
-@mixin e($element) {
+@mixin element($element) {
   &__#{$element} {
     @content;
   }
 }
-@mixin m($modifier) {
+@mixin modifier($modifier) {
   &--#{$modifier} {
     @content;
   }
@@ -93,4 +93,13 @@ $max: max-width;
 	-webkit-appearance: $value;
 	   -moz-appearance: $value;
 	        appearance: $value;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both; }
+  *zoom: 1;
 }

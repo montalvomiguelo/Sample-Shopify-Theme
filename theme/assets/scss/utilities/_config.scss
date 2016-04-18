@@ -2,21 +2,21 @@
 // Global Config
 // ==========================================================================
 
-// Backgrounds
-$colorBody: #ffffff;
-
-// Text colors
+// Colors
+$colorBody: #FFFFFF;
 $colorTextBody: #646464;
 $colorLink: #717C82;
 $colorLinkHover: #2E2E2E;
 $colorHeader: #507B96;
 $colorButton: #2B4759;
+$colorHeaderBg: #F7F7F7;
+$colorBorder: #E5E5E5;
 
 // Font stacks
 $bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-// Breakpoint and Grid Variables
+// Breakpoints and Grid Variables
 $viewportIncrement: 1px;
 
 $small: 480px;

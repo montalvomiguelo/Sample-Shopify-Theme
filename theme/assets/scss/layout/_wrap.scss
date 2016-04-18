@@ -1,0 +1,11 @@
+.wrap {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 0 20px;
+  width: 100%;
+
+  @include at-query($min, $large) {
+    padding: 0 40px;
+  }
+}
