@@ -3,9 +3,7 @@
 }
 
 html {
-  min-height: 100%;
-  overflow-y: scroll;
-  position: relative;
+  height: 100%;
 }
 
 body {
@@ -14,8 +12,14 @@ body {
   background-color: $colorBody;
   color: $colorTextBody;
   font-family: $bodyFontStack;
+  height: 100%;
   line-height: 1;
-  margin-bottom: 120px;
+  padding-bottom: 160px;
+  position: relative;
+
+  @include at-query($min, $large) {
+    padding-bottom: 120px;
+  }
 }
 
 a, a:visited {
