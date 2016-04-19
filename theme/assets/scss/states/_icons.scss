@@ -1,0 +1,23 @@
+.icon-hamburger {
+  &.is-open {
+    span {
+      &:nth-child(1),
+      &:nth-child(4) {
+        top: 50%;
+        margin-top: -1px;
+        width: 0%;
+        left: 50%;
+      }
+
+      &:nth-child(2) {
+        @include prefixer(transform, rotate(45deg), ms webkit spec);
+      }
+
+      &:nth-child(3) {
+        @include prefixer(transform, rotate(-45deg), ms webkit spec);
+      }
+
+    }
+  }
+}
+
