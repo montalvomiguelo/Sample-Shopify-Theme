@@ -1,0 +1,37 @@
+.mobile-nav {
+  background-color: $colorBody;
+  border-bottom: 1px solid $colorBorder;
+  box-shadow: 0px 1px 3px $colorBorder;
+  display: block;
+  font-size: 21px;
+  height: 60px;
+  padding: 0 20px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  @include at-query($min, $large) {
+    display: none;
+    z-index: auto;
+  }
+
+  &-cart {
+    @include vertical-align;
+    float: right;
+    height: 14px;
+    font-size: 14px;
+  }
+
+  &-cart-icon {
+    @include transition(all .3s ease);
+    fill: $colorLink;
+    float: left;
+    height: 21px;
+    margin-right: 10px;
+    margin-top: -4px;
+    width: 21px;
+  }
+
+
+}
