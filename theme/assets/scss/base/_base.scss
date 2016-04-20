@@ -9,8 +9,8 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: $colorBody;
-  color: $colorTextBody;
+  background-color: $backgroundColor;
+  color: $textColor;
   font-family: $bodyFontStack;
   height: 100%;
   line-height: 1;
@@ -24,16 +24,16 @@ body {
 
 a, a:visited {
   @include transition(all .3s ease);
-  color: $colorLink;
+  color: $linkColor;
   text-decoration: none;
 
   &:hover {
-    color: $colorLinkHover;
+    color: $hoverColor;
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $colorHeader;
+  color: $headerColor;
   font-family: $headerFontStack;
   font-weight: 500;
   margin: 0;
@@ -84,17 +84,17 @@ ul, ol {
 input, textarea {
   @include transition(all .3s ease);
   @include x-appearance(none);
-  background: $colorBody;
+  background: $backgroundColor;
   border-radius: 2px;
-  border: 1px solid $colorLink;
-  color: $colorLink;
+  border: 1px solid $linkColor;
+  color: $linkColor;
   font-family: $bodyFontStack;
   font-size: 14px;
   padding: 8px 10px;
 
   &:focus {
-    border: 1px solid $colorLinkHover;
-    color: $colorLinkHover;
+    border: 1px solid $hoverColor;
+    color: $hoverColor;
     outline: none;
   }
 
@@ -107,9 +107,9 @@ input {
 button {
   @include transition(all .3s ease);
   border-radius: 2px;
-  background-color: $colorBody;
-  border: 1px solid $colorButton;
-  color: $colorButton;
+  background-color: $backgroundColor;
+  border: 1px solid $buttoColor;
+  color: $buttoColor;
   cursor: pointer;
   display: inline-block;
   font-family: $bodyFontStack;
@@ -121,21 +121,21 @@ button {
   text-align: center;
 
   &:hover, &:focus, &:active {
-    background-color: $colorButton;
-    border: 1px solid $colorButton;
-    color: $colorBody;
+    background-color: $buttoColor;
+    border: 1px solid $buttoColor;
+    color: $backgroundColor;
   }
 }
 
 select {
   @include transition(all .3s ease);
   @include x-appearance(none);
-  background-color: $colorBody;
+  background-color: $backgroundColor;
   background: url(#{'{{ "arrow-down.svg" | asset_url }}'}) right 10px center no-repeat;
   background-size: 13px 8px;
   border-radius: 2px;
-  border: 1px solid $colorButton;
-  color: $colorButton;
+  border: 1px solid $buttoColor;
+  color: $buttoColor;
   cursor: pointer;
   font-size: 14px;
   height: 50px;

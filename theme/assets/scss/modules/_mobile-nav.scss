@@ -1,7 +1,7 @@
 .mobile-nav {
-  background-color: $colorBody;
-  border-bottom: 1px solid $colorBorder;
-  box-shadow: 0px 1px 3px $colorBorder;
+  background-color: $backgroundColor;
+  border-bottom: 1px solid $borderColor;
+  box-shadow: 0px 1px 3px $borderColor;
   display: block;
   font-size: 21px;
   height: 60px;
@@ -25,7 +25,7 @@
 
   &-cart-icon {
     @include transition(all .3s ease);
-    fill: $colorLink;
+    fill: $linkColor;
     float: left;
     height: 21px;
     margin-right: 10px;

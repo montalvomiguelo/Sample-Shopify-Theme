@@ -10,7 +10,7 @@
     span {
       @include prefixer(transform, rotate(0deg), ms webkit spec);
       @include transition(all .3s ease);
-      background: $colorHeader;
+      background: $headerColor;
       border-radius: 2px;
       display: block;
       height: 2px;
