@@ -33,16 +33,17 @@
       font-size: 42px;
     }
 
-    @include modifier(text) {
+    img {
+      max-height: 250px;
+    }
+  }
+
+  @include modifier(text) {
+    a {
       display: block;
       line-height: 1.2;
       white-space: normal;
       word-wrap: break-word;
     }
-
-    img {
-      max-height: 250px;
-    }
-
   }
 }
