@@ -20,7 +20,8 @@
     }
   }
 
-  @include element(link) {
+  a {
+    color: $headerColor;
     display: inline-block;
     font-size: 30px;
 
