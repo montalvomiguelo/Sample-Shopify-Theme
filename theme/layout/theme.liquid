@@ -53,7 +53,7 @@
   </div>
   <header class="site-header{% if settings.use_logo %} site-header--logo{% else %} site-header--text{% endif %}">
     <div class="wrap">
-      <a href="/" title="{{ store.name | escape }}" class="site-header__link {% if settings.use_logo %}site-header__link-logo{% else %}site-header__link--text{% endif %}">
+      <a href="/" title="{{ store.name | escape }}">
         {% if settings.use_logo %}
           <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}">
         {% else %}
