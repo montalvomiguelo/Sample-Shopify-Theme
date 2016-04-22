@@ -39,3 +39,7 @@ $breakpoint-has-push:  ('medium', 'medium-down', 'large');
 $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 
 $gridGutter: 20px; // can be a %, but nested grids will have smaller margins because of it
+
+// The following are dependencies of at-query mixin
+$min: min-width;
+$max: max-width;

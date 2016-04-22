@@ -53,12 +53,8 @@
 
 // Transitions
 
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
+@mixin transition($property) {
+  @include prefixer(transition, $property, webkit moz ms o spec);
 }
 
 /*============================================================================
@@ -66,8 +62,6 @@
     - Based on http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
     - Usage docs: http://shopify.github.io/Timber/#sass-mixins
 ==============================================================================*/
-$min: min-width;
-$max: max-width;
 @mixin at-query ($constraint_, $viewport1_, $viewport2_:null) {
  $constraint: $constraint_; $viewport1: $viewport1_; $viewport2: $viewport2_;
   @if type-of($constraint_) == number {
@@ -90,9 +84,7 @@ $max: max-width;
 
 // Appearance
 @mixin x-appearance ($value) {
-	-webkit-appearance: $value;
-	   -moz-appearance: $value;
-	        appearance: $value;
+  @include prefixer(appearance, $value, webkit moz spec);
 }
 
 // Clearfix
@@ -106,9 +98,7 @@ $max: max-width;
 
 // Vertical Alignment
 @mixin vertical-align {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  @include prefixer(transform, translateY(-50%), webkit ms spec);
 }
