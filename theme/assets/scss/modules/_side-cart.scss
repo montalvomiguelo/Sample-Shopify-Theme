@@ -2,8 +2,8 @@
   @include clearfix();
   border-radius: 2px;
   background-color: $backgroundColor;
-  border: 1px solid $buttoColor;
-  color: $buttoColor;
+  border: 1px solid $buttonColor;
+  color: $buttonColor;
   display: none;
   font-family: $bodyFontStack;
   font-size: 14px;
@@ -20,8 +20,8 @@
   &:focus,
   &:active {
     @include transition(all .3s ease);
-    background-color: $buttoColor;
-    border-color: $buttoColor;
+    background-color: $buttonColor;
+    border-color: $buttonColor;
 
     .side-cart__count,
     .side-cart__cost {
@@ -46,7 +46,7 @@
   @include element(icon) {
     @include transition(all .3s ease);
     @include vertical-align;
-    fill: $buttoColor;
+    fill: $buttonColor;
     height: 20px;
     left: 10px;
     position: absolute;

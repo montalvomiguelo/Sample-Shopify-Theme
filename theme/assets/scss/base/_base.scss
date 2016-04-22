@@ -108,8 +108,8 @@ button {
   @include transition(all .3s ease);
   border-radius: 2px;
   background-color: $backgroundColor;
-  border: 1px solid $buttoColor;
-  color: $buttoColor;
+  border: 1px solid $buttonColor;
+  color: $buttonColor;
   cursor: pointer;
   display: inline-block;
   font-family: $bodyFontStack;
@@ -121,8 +121,8 @@ button {
   text-align: center;
 
   &:hover, &:focus, &:active {
-    background-color: $buttoColor;
-    border: 1px solid $buttoColor;
+    background-color: $buttonColor;
+    border: 1px solid $buttonColor;
     color: $backgroundColor;
   }
 }
@@ -134,8 +134,8 @@ select {
   background: url(#{'{{ "arrow-down.svg" | asset_url }}'}) right 10px center no-repeat;
   background-size: 13px 8px;
   border-radius: 2px;
-  border: 1px solid $buttoColor;
-  color: $buttoColor;
+  border: 1px solid $buttonColor;
+  color: $buttonColor;
   cursor: pointer;
   font-size: 14px;
   height: 50px;
