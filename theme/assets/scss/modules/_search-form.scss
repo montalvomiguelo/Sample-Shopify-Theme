@@ -1,0 +1,40 @@
+.search-form {
+  @include transition(all .3s ease);
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  label {
+    @include transition(all .3s ease);
+    bottom: 6px;
+    color: $linkColor;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+
+  input {
+    @include x-appearance(none);
+    background: none;
+    border-radius: 0;
+    border: none;
+    color: $linkColor;
+    cursor: pointer;
+    font-size: 14px;
+    height: 100%;
+    opacity: 0;
+    padding: 4px 0;
+    width: 100%;
+    &:focus {
+      border: none;
+      opacity: 1;
+      & + label {
+        opacity: 0;
+      }
+    }
+  }
+}

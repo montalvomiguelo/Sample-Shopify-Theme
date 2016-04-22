@@ -1,0 +1,12 @@
+.sidebar-menu-container {
+  margin-bottom: 20px;
+
+  @include element(title) {
+    border-bottom: 1px solid $borderColor;
+    font-size: 17px;
+    line-height: 1.3em;
+    margin-bottom: 4px;
+    padding: 0 0 6px;
+  }
+
+}
