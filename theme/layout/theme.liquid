@@ -138,10 +138,10 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="grid">
-        <div class="grid__item large--one-half small--text-center medium--text-center large--text-left site-footer__about">
+        <div class="grid__item large--one-half xlarge--one-half small--text-center medium--text-center large--text-left site-footer__about">
           &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ powered_by_link }}
         </div>
-        <div class="grid__item large--one-half small--text-center medium--text-center large--text-right">
+        <div class="grid__item large--one-half xlarge--one-half small--text-center medium--text-center large--text-right">
           {% if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_tumblr_link != blank or settings.social_pinterest_link != blank %}
             {% comment %}
               Loop through the social network links
