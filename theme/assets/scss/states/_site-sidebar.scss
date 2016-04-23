@@ -1,6 +1,7 @@
 .site-sidebar {
   &.is-open {
     @include at-query($max, $medium) {
+      @include transition(all .3s ease);
       border-bottom: 1px solid $borderColor;
       box-shadow: 0px 1px 3px $borderColor;
       display: block;

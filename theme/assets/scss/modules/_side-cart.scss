@@ -1,6 +1,5 @@
 .side-cart {
   @include clearfix();
-  @include transition(all .3s ease);
   background-color: $backgroundColor;
   border-radius: 2px;
   border: 1px solid $buttonColor;
@@ -8,53 +7,67 @@
   display: none;
   font-family: $bodyFontStack;
   font-size: 14px;
-  height: 50px;
+  height: 40px;
   margin-bottom: 40px;
   padding: 0 10px;
   position: relative;
 
-  @include at-query($min, $large) {
+  @include at-query($min, $postMedium) {
     display: block;
+  }
+
+  @include at-query($min, $postXlarge) {
+    font-size: 14px;
+    height: 50px;
   }
 
   &:hover,
   &:focus,
   &:active {
+    @include transition(all .3s ease);
     background-color: $buttonColor;
     border-color: $buttonColor;
 
     .side-cart__count,
     .side-cart__cost {
+      @include transition(all .3s ease);
       color: $backgroundColor;
     }
     .side-cart__icon {
+      @include transition(all .3s ease);
       fill: $backgroundColor;
     }
   }
 
   @include element(count) {
-    @include transition(all .3s ease);
     @include vertical-align;
     color: $buttonColor;
     float: left;
-    margin-left: 27px;
+    margin-left: 22px;
+
+    @include at-query($min, $postXlarge) {
+      margin-left: 27px;
+    }
   }
 
   @include element(cost) {
-    @include transition(all .3s ease);
     @include vertical-align;
     color: $buttonColor;
     float: right;
   }
 
   @include element(icon) {
-    @include transition(all .3s ease);
     @include vertical-align;
     fill: $buttonColor;
-    height: 20px;
+    height: 16px;
     left: 10px;
     position: absolute;
-    width: 20px;
+    width: 16px;
+
+    @include at-query($min, $postXlarge) {
+      height: 20px;
+      width: 20px;
+    }
   }
 
 }

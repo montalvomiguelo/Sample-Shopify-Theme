@@ -4,7 +4,7 @@
   list-style: none;
   margin: 25px 0 0 0;
 
-  @include at-query($min, $large) {
+  @include at-query($min, $postMedium) {
     margin: 0;
     float: right;
   }
@@ -14,7 +14,7 @@
     margin: 0 10px;
     text-align: center;
 
-    @include at-query($min, $large) {
+    @include at-query($min, $postMedium) {
       float: left;
       margin-left: 22px;
       margin-right: 0;

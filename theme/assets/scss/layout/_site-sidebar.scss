@@ -1,5 +1,4 @@
 .site-sidebar {
-  @include transition(all .3s ease);
   background-color: $backgroundColor;
   height: auto;
   left: 0;
@@ -10,7 +9,7 @@
   visibility: hidden;
   width: 100%;
 
-  @include at-query($min, $large) {
+  @include at-query($min, $postMedium) {
     border-radius: 2px;
     // ToDo: Add setting for sidebar position
     // float: #{"{% if theme.sidebar_position == 'right' %} right {% else %} left {% endif %}"};
@@ -24,6 +23,15 @@
     padding-top: 0;
     position: static;
     visibility: visible;
+    width: 23%;
+  }
+
+  @include at-query($min, $postLarge) {
+    width: 20%;
+  }
+
+  @include at-query($min, $postXlarge) {
     width: 17%;
   }
+
 }

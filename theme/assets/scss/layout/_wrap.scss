@@ -5,7 +5,7 @@
   padding: 0 20px;
   width: 100%;
 
-  @include at-query($min, $large) {
+  @include at-query($min, $postMedium) {
     padding: 0 40px;
   }
 }

@@ -17,7 +17,7 @@ body {
   padding-bottom: 160px;
   position: relative;
 
-  @include at-query($min, $large) {
+  @include at-query($min, $postMedium) {
     padding-bottom: 120px;
   }
 }
@@ -52,7 +52,7 @@ h1 {
     margin-bottom: 30px;
   }
 
-  @include at-query($min, $large) {
+  @include at-query($min, $postMedium) {
     font-size: 26px;
     text-align: left;
   }
