@@ -19,24 +19,30 @@ $headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-seri
 // Breakpoints and Grid Variables
 $viewportIncrement: 1px;
 
-$small: 480px;
-$medium: 768px;
-$large: 769px;
+$xsmall: 500px;
+$small: 640px;
+$medium: 800px;
+$large: 945px;
+$xlarge: 1200px;
 
 $postSmall: $small + $viewportIncrement;
 $preMedium: $medium - $viewportIncrement;
+$postMedium: $medium + $viewportIncrement;
 $preLarge: $large - $viewportIncrement;
+$postLarge: $large + $viewportIncrement;
+$postXlarge: $xlarge + $viewportIncrement;
 
 // The following are dependencies of csswizardry grid
 $breakpoints: (
   'small' '(max-width: #{$small})',
   'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
   'medium-down' '(max-width: #{$medium})',
-  'large' '(min-width: #{$large})'
+  'large' '(min-width: #{$postMedium}) and (max-width: #{$large})',
+  'xlarge' '(min-width: #{$postLarge})'
 );
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
-$breakpoint-has-push:  ('medium', 'medium-down', 'large');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'xlarge');
+$breakpoint-has-push:  ('medium', 'medium-down', 'large', 'xlarge');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'xlarge');
 
 $gridGutter: 20px; // can be a %, but nested grids will have smaller margins because of it
 
