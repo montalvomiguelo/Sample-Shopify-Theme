@@ -3,14 +3,14 @@
 // ==========================================================================
 
 // Colors
-$backgroundColor: #FFFFFF;
-$textColor: #646464;
-$linkColor: #717C82;
-$hoverColor: #2E2E2E;
-$headerColor: #507B96;
-$buttonColor: #2B4759;
-$secondaryBackground: #F7F7F7;
-$borderColor: #E5E5E5;
+$backgroundColor: #{'{{ settings.background_color }}'};
+$textColor: #{'{{ settings.text_color }}'};
+$linkColor: #{'{{ settings.link_color }}'};
+$hoverColor: #{'{{ settings.link_hover_color}}'};
+$headerColor: #{'{{ settings.header_color }}'};
+$buttonColor: #{'{{ settings.button_color }}'};
+$secondaryBackground: #{'{{ settings.secondary_background }}'};
+$borderColor: #{'{{ settings.border_color }}'};
 
 // Font stacks
 $bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;

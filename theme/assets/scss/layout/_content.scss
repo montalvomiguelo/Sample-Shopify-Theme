@@ -5,9 +5,7 @@
   width: 100%;
 
   @include at-query($min, $postMedium) {
-    // ToDo: Add setting for sidebar position
-    // float: #{"{% if theme.sidebar_position == 'right' %} left {% else %} right {% endif %}"}
-    float: left;
+    float: #{"{% if settings.sidebar_position == 'right' %} left {% else %} right {% endif %}"};
     padding-bottom: 80px;
     max-width: 71%;
   }
