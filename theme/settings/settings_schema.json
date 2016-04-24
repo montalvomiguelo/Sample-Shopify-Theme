@@ -124,6 +124,20 @@
     ]
   },
   {
+    "name": "Home page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Featured collection"
+      },
+      {
+        "type": "collection",
+        "id": "home_featured_products",
+        "label": "Featured collection"
+      }
+    ]
+  },
+  {
     "name": "Sidebar",
     "settings": [
       {
