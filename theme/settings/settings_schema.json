@@ -9,7 +9,7 @@
       },
       {
         "type": "paragraph",
-        "content": "This theme is a fork of Lunch Break theme from BigCartel"
+        "content": "This theme is a fork of [Lunch Break](https:\/\/blog.bigcartel.com\/2016\/03\/30\/introducing-the-lunch-break-theme\/) by [Big Cartel](https:\/\/www.bigcartel.com\/)."
       }
     ]
   },
@@ -23,15 +23,25 @@
       {
         "type": "checkbox",
         "id": "use_logo",
-        "label": "Use Custom Logo"
+        "label": "Use custom logo"
       },
       {
         "type": "image",
         "id": "logo.png",
-        "label": "Custom Logo",
+        "label": "Custom logo",
         "max-width": 1300,
         "max-height": 250,
         "info": "Good for an image up to 1300 by 250 pixels"
+      },
+      {
+        "type": "select",
+        "id": "header_position",
+        "options": [
+          { "value": "left", "label": "Left"},
+          { "value": "center", "label": "Center"},
+          { "value": "right", "label": "Right"}
+        ],
+        "label": "Header alignment"
       },
       {
         "type": "header",
@@ -40,14 +50,239 @@
       {
         "type": "checkbox",
         "id": "favicon_enable",
-        "label": "Use custom icon?"
+        "label": "Use custom icon"
       },
       {
         "type": "image",
         "id": "favicon.png",
-        "label": "16px x 16px png",
-        "max-width": 16,
-        "max-height": 16
+        "label": "Icon",
+        "max-width": 32,
+        "max-height": 32,
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General colors"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background",
+        "default": "#FCFCFC"
+      },
+      {
+        "type": "color",
+        "id": "secondary_background",
+        "label": "Header & Footer Background",
+        "default": "#F7F7F7"
+      },
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Headers",
+        "default": "#507B96"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#646464"
+      },
+      {
+        "type": "color",
+        "id": "link_color",
+        "label": "Links",
+        "default": "#717C82"
+      },
+      {
+        "type": "color",
+        "id": "link_hover_color",
+        "label": "Link hover",
+        "default": "#2E2E2E"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Buttons",
+        "default": "#2B4759"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Borders",
+        "default": "#E5E5E5"
+      }
+    ]
+  },
+  {
+    "name": "Sidebar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Position"
+      },
+      {
+        "type": "select",
+        "id": "sidebar_position",
+        "options": [
+          { "value": "left", "label": "Left"},
+          { "value": "right", "label": "Right"}
+        ],
+        "label": "Sidebar position"
+      },
+      {
+        "type": "header",
+        "content": "Search"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show search"
+      },
+      {
+        "type": "header",
+        "content": "Shop collections"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_collections_enable",
+        "label": "Show shop collections"
+      },
+      {
+        "type": "link_list",
+        "id": "sidebar_collections_linklist",
+        "label": "Shop collections"
+      },
+      {
+        "type": "header",
+        "content": "Vendors"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_vendors_enable",
+        "label": "Show shop vendors"
+      },
+      {
+        "type": "header",
+        "content": "Newest products"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_newest_products_enable",
+        "label": "Show newest products"
+      },
+      {
+        "type": "collection",
+        "id": "sidebar_newest_products_collection",
+        "label": "Newest products collection"
+      },
+      {
+        "type": "header",
+        "content": "Top selling products"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_top_selling_enable",
+        "label": "Show top selling products"
+      },
+      {
+        "type": "collection",
+        "id": "sidebar_top_selling_collection",
+        "label": "Top selling collection"
+      },
+      {
+        "type": "header",
+        "content": "Additional menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_additional_menu_enable",
+        "label": "Shop additional menu"
+      },
+      {
+        "type": "link_list",
+        "id": "sidebar_additional_menu",
+        "label": "Additional menu"
+      }
+    ]
+  },
+  {
+    "name": "Collection page",
+    "settings": [
+      {
+        "type": "select",
+        "id": "collections_products_per_row",
+        "label": "Number of products per row",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_rows",
+        "label": "Number of rows",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "9",
+            "label": "9"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          }
+        ]
       }
     ]
   },
@@ -87,59 +322,6 @@
         "id": "social_tumblr_link",
         "label": "Tumblr",
         "info": "http:\/\/shopify.tumblr.com"
-      },
-      {
-        "type": "text",
-        "id": "social_youtube_link",
-        "label": "YouTube",
-        "info": "https:\/\/www.youtube.com\/user\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_vimeo_link",
-        "label": "Vimeo",
-        "info": "https:\/\/vimeo.com\/shopify"
-      },
-      {
-        "type": "text",
-        "id": "social_rss_link",
-        "label": "RSS",
-        "info": "http:\/\/store.myshopify.com\/blogs\/blogname.atom"
-      },
-      {
-        "type": "header",
-        "content": "Sharing"
-      },
-      {
-        "type": "checkbox",
-        "id": "social_sharing_products",
-        "label": "Enable product sharing"
-      },
-      {
-        "type": "checkbox",
-        "id": "social_sharing_blog",
-        "label": "Enable blog post sharing"
-      },
-      {
-        "type": "checkbox",
-        "id": "social_sharing_count",
-        "label": "Show number of shares",
-        "info": "Available for Facebook, Twitter, and Pinterest"
-      },
-      {
-        "type": "checkbox",
-        "id": "share_facebook",
-        "label": "Share on Facebook"
-      },
-      {
-        "type": "checkbox",
-        "id": "share_twitter",
-        "label": "Tweet on Twitter"
-      },
-      {
-        "type": "checkbox",
-        "id": "share_pinterest",
-        "label": "Pin on Pinterest"
       }
     ]
   }
