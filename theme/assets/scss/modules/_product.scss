@@ -1,0 +1,61 @@
+.product {
+  border-radius: 2px;
+  padding-bottom: 40px;
+  position: relative;
+  &:hover {
+    .product__name {
+      color: $hoverColor;
+    }
+  }
+
+  @include element(link) {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 100% ;
+  }
+
+  @include element(image) {
+    @include transition(all .3s ease);
+    border-radius: 2px;
+    display: block;
+    height: auto;
+    width: auto;
+    &:hover {
+      opacity: .85;
+    }
+  }
+
+  @include element(name) {
+    font-size: 14px;
+    line-height: 1.3em;
+    margin-top: 10px;
+  }
+
+  @include element(price) {
+    @include transition(all .3s ease);
+    color: $textColor;
+    display: inline-block;
+    font-family: $bodyFontStack;
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-top: 5px;
+    @include at-query($min, $postSmall) {
+      font-size: 13px;
+    }
+  }
+
+  @include element(status) {
+    background: $backgroundColor;
+    border-radius: 2px;
+    color: $textColor;
+    font-size: 10px;
+    letter-spacing: .8px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 10px;
+    text-transform: uppercase;
+    top: 10px;
+  }
+
+}
