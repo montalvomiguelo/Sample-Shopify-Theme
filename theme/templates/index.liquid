@@ -1,0 +1,32 @@
+<!-- /templates/index.liquid -->
+{% comment %}
+
+  This is the homepage of your site.
+
+  More info on global variables (available on all templates):
+    - http://docs.shopify.com/themes/liquid-variables/global
+{% endcomment %}
+
+{% assign featured = settings.home_featured_products %}
+{% assign products_per_row = settings.collections_products_per_row %}
+{% assign rows = settings.collections_rows %}
+{% assign total_products = products_per_row | times: rows %}
+
+<h1>Featured Products</h1>
+
+{% case products_per_row %}
+  {% when '2' %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-half xlarge--one-half' %}
+  {% when '3' %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-third xlarge--one-third' %}
+  {% when '4' %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-third xlarge--one-quarter' %}
+{% endcase %}
+
+<div class="grid-uniform">
+
+  {% for product in collections[featured].products limit: total_products %}
+    {% include 'product-grid-item' %}
+  {% endfor %}
+
+</div>
