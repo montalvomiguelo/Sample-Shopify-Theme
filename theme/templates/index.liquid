@@ -12,8 +12,15 @@
 {% assign rows = settings.collections_rows %}
 {% assign total_products = products_per_row | times: rows %}
 
-<h1>Featured Products</h1>
+<h1>{{ 'homepage.sections.frontpage_title' | t }}</h1>
 
+{% comment %}
+  Change the grid item width by using classes from the grid in
+  the grid_item_width variable.
+
+  Example:
+    - {% assign grid_item_width = 'large--one-third medium--one-half' %}
+{% endcomment %}
 {% case products_per_row %}
   {% when '2' %}
     {% assign grid_item_width = 'small--one-half medium--one-half large--one-half xlarge--one-half' %}
@@ -25,8 +32,25 @@
 
 <div class="grid-uniform">
 
+  {% comment %}
+    Loop through products in your Frontpage collection.
+    This collection is created by default, but you must add products to it.
+  {% endcomment %}
   {% for product in collections[featured].products limit: total_products %}
+
     {% include 'product-grid-item' %}
+
+  {% else %}
+    {% comment %}
+      For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
+    {% endcomment %}
+    {% unless emptyState %}
+      {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+      {% assign emptyState = true %}
+    {% endunless %}
+
+    {% include 'onboarding-featured-products' %}
+
   {% endfor %}
 
 </div>

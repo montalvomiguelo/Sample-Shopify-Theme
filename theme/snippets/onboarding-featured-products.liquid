@@ -1,0 +1,25 @@
+<!-- snippets/onboarding-featured-products.liquid -->
+<div class="grid__item">
+  <div class="helper-section">
+    <div class="helper-note">
+      <span class="helper-icon"></span>
+      <h3>{{ 'homepage.onboarding.modal_title' | t }}</h3>
+      <p>{{ 'homepage.onboarding.no_products_html' | t }}</p>
+      <p><a class="admin-btn-primary" href="/admin/collections?tutorial=Frontpage">{{ 'homepage.onboarding.add_product' | t }}</a></p>
+    </div>
+
+    <div class="grid-uniform helper-content">
+      {% assign index = 1 %}
+      {% for i in (1..4) %}
+        <div class="grid__item product small--one-half medium--one-half large--one-half xlarge--one-half">
+          <a class="product__link" href="/admin/products">
+            {% capture imageUrl %}//cdn.shopify.com/s/images/themes/product-{{ i }}.png{% endcapture %}
+            {{ imageUrl | img_tag }}
+            <h4 class="product__name">{{ 'homepage.onboarding.product_title' | t }}</h4>
+            <h5 class="product__price">$ 19.99</h5>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
