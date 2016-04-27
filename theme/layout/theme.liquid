@@ -66,7 +66,7 @@
     <section class="content">
       {{ content_for_layout }}
     </section>
-    <aside class="site-sidebar is-open">
+    <aside class="site-sidebar">
       <a href="/cart" class="side-cart">
         <svg class="side-cart__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 17" enable-background="new 0 0 22 17"><path d="M4.3 0h-4.3l.5 1.4h2.8l4.2 10.9h10.5l.5-1.4h-10zM6.9 1.9l2.8 7.1h9.5l2.8-7.1h-15.1zm11.4 5.7h-7.6l-1.7-4.3h10.9l-1.6 4.3z"/><circle cx="10.2" cy="15.6" r="1.4"/><circle cx="15.6" cy="15.6" r="1.4"/></svg>
         <span class="side-cart__count">{{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }}</span>
@@ -75,64 +75,72 @@
       <div class="sidebar-menu-container">
         <h3 class="sidebar-menu-container__title">Shop</h3>
         <ul class="sidebar-menu">
-          <li class="sidebar-menu__item"><a href="#">All Products</a></li>
           {% comment %}
-            ToDo: Add setting to show the search form
+            The page shown at /collections/all is referred to as the catalog page.
           {% endcomment %}
-          {% if true %}
+          <li class="sidebar-menu__item"><a href="/collections/all">All Products</a></li>
+          {% if settings.show_search %}
             <li class="side_search">
-              <form class="search-form" name="search" action="/products" method="get" accept-charset="utf8">
-                <input class="search-form__input" id="search" name="search" type="text" autocomplete="off" />
+              <form class="search-form" action="/search" method="get" role="search">
+                <input class="search-form__input" id="search" name="q" type="text" autocomplete="off" />
                 <label class="search-form__label" for="search">Search...</label>
               </form>
             </li>
           {% endif %}
-          {% for i in (1..5) %}
-            <li class="sidebar-menu__item"><a href="#">Collection {{ i }}</a></li>
-          {% endfor %}
+
+          {% if settings.sidebar_collections_enable %}
+            {% for link in linklists[settings.sidebar_collections_linklist].links %}
+              <li class="sidebar-menu__item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
-      {% if settings.show_newest %}
-        {% comment %}
-        {% get 5 products from products.all order: 'newest' %}
-          {% if products != blank %}
-            <div class="side_pages">
-              <h3>Newest Products</h3>
-              <ul>
-                {% for product in products %}
-                  <li>{{ product | link_to }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-        {% endget %}
-        {% endcomment %}
+
+      {% if settings.sidebar_vendors_enable %}
+        <div class="sidebar-menu-container">
+          <h3 class="sidebar-menu-container__title">Vendors</h3>
+          <ul class="sidebar-menu">
+            {% for product_vendor in shop.vendors %}
+              <li class="sidebar-menu__item">{{ product_vendor | link_to_vendor }}</li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endif %}
-      {% if settings.show_top_selling %}
-        {% comment %}
-        {% get 5 products from products.all order: 'sales' %}
-          {% if products != blank %}
-            <div class="side_pages">
-              <h3>Top Selling</h3>
-              <ul>
-                {% for product in products %}
-                  <li>{{ product | link_to }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-        {% endget %}
-        {% endcomment %}
+
+      {% if settings.sidebar_newest_products_enable %}
+        {% assign newestCollection = settings.sidebar_newest_products_collection %}
+        <div class="sidebar-menu-container">
+          <h3 class="sidebar-menu-container__title">Newest Products</h3>
+          <ul class="sidebar-menu">
+            {% for product in collections[newestCollection].products limit: 5 %}
+              <li class="sidebar-menu__item"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endif %}
-      <div class="sidebar-menu-container">
-        <h3 class="sidebar-menu-container__title">Pages</h3>
-        <ul class="sidebar-menu">
-          {% for i in (1..5) %}
-            <li class="sidebar-menu__item"><a href="#">Page {{ i }}</a></li>
-          {% endfor %}
-          <li class="sidebar-menu__item"><a href="/contact" title="Contact">Contact</a></li>
-        </ul>
-      </div>
+
+      {% if settings.sidebar_top_selling_enable %}
+        {% assign topSellingCollection = settings.sidebar_top_selling_collection %}
+        <div class="sidebar-menu-container">
+          <h3 class="sidebar-menu-container__title">Top Selling</h3>
+          <ul class="sidebar-menu">
+            {% for product in collections[topSellingCollection].products limit: 5 %}
+              <li class="sidebar-menu__item"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if settings.sidebar_additional_menu_enable %}
+        <div class="sidebar-menu-container">
+          <h3 class="sidebar-menu-container__title">{{ linklists[settings.sidebar_additional_menu].title }}</h3>
+          <ul class="sidebar-menu">
+            {% for link in linklists[settings.sidebar_additional_menu].links %}
+              <li class="sidebar-menu__item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
     </aside>
   </div>
   <footer class="site-footer">
