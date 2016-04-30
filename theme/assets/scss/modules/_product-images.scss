@@ -1,0 +1,22 @@
+.product-images {
+  margin: 20px 0 40px;
+  max-width: 100%;
+  width: 100%;
+
+  @include at-query($min, $postMedium) {
+    float: left;
+    margin: 0;
+    max-width: 55%;
+  }
+
+  a {
+    display: block;
+    outline: none;
+  }
+
+  @include element(primary) {
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+  }
+}

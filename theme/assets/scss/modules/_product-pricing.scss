@@ -1,0 +1,37 @@
+.product-pricing {
+  @extend %product-pricing;
+  margin-bottom: 40px;
+  text-align: center;
+
+  @include at-query($min, $postMedium) {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  @include element(title) {
+    margin: -.2em 0 5px;
+    min-height: 0;
+  }
+
+  @include element(price) {
+    color: $textColor;
+    font-family: $bodyFontStack;
+    font-size: 17px;
+    line-height: 1.058823535;
+    margin-bottom: 40px;
+
+    > span {
+      vertical-align: middle;
+    }
+  }
+
+  @include element(status) {
+    background-color: $linkColor;
+    border-radius: 2px;
+    color: $backgroundColor;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 2px 6px;
+    text-transform: uppercase;
+  }
+}

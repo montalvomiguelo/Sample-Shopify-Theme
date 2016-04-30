@@ -1,0 +1,20 @@
+.product-thumbnails {
+  @include clearfix();
+  font-size: 0;
+  margin: 10px -5px 0 -5px;
+  padding: 0;
+  text-align: center;
+
+  @include element(item) {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
+    width: 25%;
+
+    img {
+      border-radius: 2px;
+      display: block;
+      width: 100%;
+    }
+  }
+}

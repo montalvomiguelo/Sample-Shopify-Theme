@@ -1,0 +1,26 @@
+.product-details {
+  @extend %product-pricing;
+
+  @include element(description) {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 40px;
+
+    a {
+      font-weight: 600
+    }
+  }
+
+  form {
+    margin-bottom: 40px;
+
+    select {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}

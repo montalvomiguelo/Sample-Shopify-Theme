@@ -1,0 +1,30 @@
+.share-buttons {
+  text-align: center;
+
+  @include at-query($min, $postMedium) {
+    text-align: left;
+  }
+
+  @include element(item) {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+
+    a {
+      cursor: pointer;
+      display: block;
+      &:hover {
+        svg {
+          fill: $hoverColor;
+        }
+      }
+
+      svg {
+        @include transition(all .3s ease);
+        fill: $linkColor;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
