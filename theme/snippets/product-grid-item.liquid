@@ -54,7 +54,17 @@
   <a class="product__link" href="{{ product.url | within: collection }}">
     <img class="product__image" src="{{ product.featured_image.src | img_url: 'grande' }}" alt="{{ product.featured_image.alt | escape }}">
     <h4 class="product__name">{{ product.title }}</h4>
-    <h5 class="product__price">{{ product.price | money }}</h5>
+    <h5 class="product__price">
+      {% comment %}
+        You can show a leading 'from' or 'up to' by checking 'product.price_varies'
+        if your variants have different prices.
+      {% endcomment %}
+      {% if product.price_varies %}From{% endif %}
+      {{ product.price | money }}
+      {% if on_sale %}
+      <s>{{ product.compare_at_price | money }}</s>
+      {% endif %}
+    </h5>
     {% if on_sale %}<span class="product__status">{{ 'products.product.on_sale' | t }}</span>{% endif %}
     {% if sold_out %}<span class="product__status">{{ 'products.product.sold_out' | t }}</span>{% endif %}
   </a>
