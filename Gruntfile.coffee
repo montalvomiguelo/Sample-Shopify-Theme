@@ -34,10 +34,12 @@ module.exports = (grunt) ->
         compress: IS_PRODUCTION
         mangle: IS_PRODUCTION
         beautify: not IS_PRODUCTION
-        sourceMap: not IS_PRODUCTION
       theme:
         files:
-          '.build/assets/script.js.liquid': ['theme/assets/js/script-*.js']
+          '.build/assets/script.js.liquid': [
+            'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+            'theme/assets/js/theme.js'
+          ]
 
     # Optimisation of image assets.
     imagemin:
