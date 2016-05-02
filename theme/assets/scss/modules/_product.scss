@@ -43,6 +43,10 @@
     @include at-query($min, $postSmall) {
       font-size: 13px;
     }
+
+    s {
+      opacity: .8;
+    }
   }
 
   @include element(status) {

@@ -14,12 +14,16 @@
   form {
     margin-bottom: 40px;
 
-    select {
-      margin-bottom: 20px;
+    button {
       width: 100%;
     }
 
-    button {
+    label {
+      @extend %visuallyhidden;
+    }
+
+    select {
+      margin-bottom: 20px;
       width: 100%;
     }
   }

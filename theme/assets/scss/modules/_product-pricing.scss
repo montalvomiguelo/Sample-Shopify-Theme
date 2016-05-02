@@ -20,8 +20,14 @@
     line-height: 1.058823535;
     margin-bottom: 40px;
 
-    > span {
+    > span,
+    > s {
       vertical-align: middle;
+    }
+
+    s {
+      margin-left: 5px;
+      opacity: .4;
     }
   }
 
