@@ -12,6 +12,14 @@ $buttonColor: #{'{{ settings.button_color }}'};
 $secondaryBackground: #{'{{ settings.secondary_background }}'};
 $borderColor: #{'{{ settings.border_color }}'};
 
+// Helper colors
+$disabledGrey: #f6f6f6;
+$disabledBorder: darken($disabledGrey, 25%);
+$errorRed: #d02e2e;
+$errorRedBg: #fff6f6;
+$successGreen: #56ad6a;
+$successGreenBg: #ecfef0;
+
 // Font stacks
 $bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
