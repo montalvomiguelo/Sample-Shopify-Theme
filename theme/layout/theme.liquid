@@ -24,6 +24,8 @@
 
   {{ content_for_header }}
 
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js' | script_tag }}
+
   {% comment %}
     If you store has customer accounts disabled, you can remove the following JS file
   {% endcomment %}
@@ -152,7 +154,7 @@
       </div>
     </div>
   </footer>
-  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js' | script_tag }}
+
   {{ 'script.js' | asset_url | script_tag }}
 
 </body>
