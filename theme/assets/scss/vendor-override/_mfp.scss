@@ -1,0 +1,83 @@
+a.mfp-arrow {
+  @include prefixer(transform-origin, 50% 50% 0, ms webkit spec);
+  background: #FFF;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 45px;
+  opacity: .4;
+  width: 45px;
+  z-index: 1046;
+
+  @include at-query($max, 900px) {
+    @include prefixer(transform, scale(.8), ms webkit spec);
+  }
+
+
+  &:after {
+    background: transparent;
+    border: none;
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin: 0;
+    right: 0;
+    top: 0;
+    width: auto;
+    z-index: 1;
+  }
+
+  &:before {
+    content: none;
+  }
+
+  svg {
+    @include vertical-align();
+    fill: #000;
+    height: 20px;
+    width: 20px;
+    z-index: -1;
+  }
+}
+
+.mfp-arrow-left {
+  left: 20px;
+}
+
+.mfp-arrow-right {
+  right: 20px;
+}
+
+.mfp-bottom-bar {
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: auto;
+}
+
+.mfp-close {
+  &:hover,
+  &:focus {
+    background: none;
+    border: 0px;
+    opacity: 1;
+  }
+  svg {
+    fill: #FFF;
+    height: 18px;
+    position: relative;
+    width: 18px;
+    z-index: -1;
+  }
+}
+
+.mfp-counter {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  color: #CCC;
+  font-size: 14px;
+  line-height: 18px;
+  white-space: nowrap;
+}

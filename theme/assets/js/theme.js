@@ -100,8 +100,18 @@ theme.productImageGallery = function() {
   theme.cache.$productImageGallery.magnificPopup({
     type:'image',
     tLoading: '',
+    closeMarkup: '<button title="%title%" type="button" class="mfp-close"><svg class="remove_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.1 14.1" enable-background="new 0 0 14.1 14.1"><path d="M14.1 1.1l-1.1-1.1-6 6-5.9-6-1.1 1.1 6 5.9-6 6 1.1 1.1 5.9-6 6 6 1.1-1.1-6-6z"/></svg></button>',
     gallery: {
-      enabled: true
+      enabled: true,
+      arrowMarkup: '<a title="%title%" class="mfp-arrow mfp-arrow-%dir%"></a>'
+    },
+    callbacks: {
+      buildControls: function() {
+        if (this.arrowLeft && this.arrowRight) {
+          $(this.arrowLeft).html('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.6 15" enable-background="new 0 0 7.6 15"><path d="M6.4 15l-6.4-7.5 6.3-7.5 1.1 1-5.4 6.5 5.6 6.5z"/></svg>');
+          $(this.arrowRight).html('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7.6 15" enable-background="new 0 0 7.6 15"><path d="M1.1 0l6.5 7.5-6.3 7.5-1.2-1 5.5-6.5-5.6-6.5z"/></svg>');
+        }
+      }
     }
   });
 
