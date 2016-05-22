@@ -1,0 +1,82 @@
+<!-- /templates/search.liquid -->
+{% comment %}
+
+  To return only products or pages in results:
+    - http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
+    - Or manually add type=product or type=page to the search URL as a parameter
+
+{% endcomment %}
+
+{% paginate search.results by 12 %}
+
+{% if search.performed %}
+  {% if search.results_count == 0 %}
+    <h1>{{ 'general.search.no_results_html' | t: terms: search.terms }}</h1>
+  {% else %}
+    <h1>{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
+  {% endif %}
+{% else %}
+  <h1>{{ 'general.search.title' | t }}</h1>
+{% endif %}
+
+{% case products_per_row %}
+  {% when '2' %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-half xlarge--one-half' %}
+  {% when '3' %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-third xlarge--one-third' %}
+  {% when '4' %}
+    {% assign grid_item_width = 'small--one-half medium--one-half large--one-third xlarge--one-quarter' %}
+{% endcase %}
+
+{% if search.performed %}
+
+  <div class="grid-uniform">
+    {% for item in search.results %}
+
+      {% assign on_sale = false %}
+      {% if item.compare_at_price > item.price %}
+        {% assign on_sale = true %}
+      {% endif %}
+
+      {% assign sold_out = true %}
+      {% if item.available %}
+        {% assign sold_out = false %}
+      {% endif %}
+
+      <div class="product grid__item small--one-half medium--one-third large--one-third xlarge--one-third">
+        {% if item.featured_image %}
+          <a class="product__link" href="{{ item.url | within: collection }}">
+            <img class="product__image" src="{{ item.featured_image.src | img_url: 'grande' }}" alt="{{ item.featured_image.alt }}">
+            <h4 class="product__name">{{ item.title }}</h4>
+            <h5 class="product__price">
+              {% if item.price_varies %}{{ 'products.general.from_text_html' | t }}{% endif %}
+              {{ item.price | money }}
+              {% if on_sale %}
+              <s>{{ item.compare_at_price | money }}</s>
+              {% endif %}
+            </h5>
+            {% if on_sale %}<span class="product__status">{{ 'products.product.on_sale' | t }}</span>{% endif %}
+            {% if sold_out %}<span class="product__status">{{ 'products.product.sold_out' | t }}</span>{% endif %}
+          </a>
+        {% else %}
+          <a href="{{ item.url }}" class="page-link">
+            <span class="page-link__title">{{ item.title }}</span>
+            <span class="page-link__content">
+              {{ item.content | strip_html | truncatewords: 60 }}
+            </span>
+          </a>
+        {% endif %}
+      </div>
+
+    {% endfor %}
+  </div>
+
+  {% if paginate.pages > 1 %}
+    <div class="pagination">
+      {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+    </div>
+  {% endif %}
+
+{% endif %}
+
+{% endpaginate %}
