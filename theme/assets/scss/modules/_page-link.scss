@@ -1,0 +1,14 @@
+.page-link {
+  background: $disabledGrey;
+  display: block;
+  padding: $gridGutter;
+
+  @include element(title) {
+    @extend %product-name;
+    display: block;
+  }
+
+  @include element(content) {
+    @extend %product-price;
+  }
+}
