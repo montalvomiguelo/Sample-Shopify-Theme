@@ -63,7 +63,7 @@
       "update": "Update Cart",
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
-      "continue_browsing_html": "Continue browsing <a href=\"/collections/all\">here</a>.",
+      "continue_browsing_html": "<strong>Your cart is empty!</strong> Sounds like a good time to <a href=\"/\">start shopping.</a>",
       "close_cart": "Close Cart",
       "savings_html": "You're saving {{ price }}"
     },
