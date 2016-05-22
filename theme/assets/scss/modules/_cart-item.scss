@@ -1,0 +1,139 @@
+.cart-item {
+  border-bottom: 1px solid $borderColor;
+  display: block;
+  font-size: 13px;
+  height: 100px;
+  line-height: 15px;
+  overflow: hidden;
+  padding: 20px 0;
+
+  @include at-query($min, $postSmall) {
+    font-size: 14px;
+    height: 120px;
+  }
+
+  @include element(actions) {
+    @include vertical-align();
+    float: right;
+    max-width: 55%;
+    text-align: right;
+
+    @include at-query($min, $postMedium) {
+      max-width: 400px;
+    }
+
+    div {
+      display: inline-block;
+
+      &.price {
+        width: 85px;
+      }
+
+      &.quantity {
+        width: 55px;
+
+        input[type="number"] {
+          border-radius: 2px;
+          font-size: 14px;
+          height: 46px;
+          // text-align: center;
+          text-indent: 0;
+          width: 56px;
+        }
+      }
+
+      &.remove {
+        text-align: right;
+        width: 35px;
+
+        @include at-query($min, $postMedium) {
+          width: 46px;
+        }
+
+        a {
+          &:hover {
+            svg {
+              fill: $hoverColor;
+            }
+          }
+          svg {
+            @include transition(all .3s ease);
+            cursor: pointer;
+            fill: $linkColor;
+            height: 14px;
+            position: relative;
+            top: 2px;
+            width: 14px;
+
+            @include at-query($min, $xsmall) {
+              height: 15px;
+              width: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include element(details) {
+    @include vertical-align();
+    float: left;
+    height: 80px;
+    max-width: 42%;
+    width: auto;
+
+    @include at-query($min, $postMedium) {
+      max-width: 30%;
+    }
+
+    @include at-query($min, $postLarge) {
+      width: 300px;
+    }
+
+    a {
+      @include vertical-align();
+      color: $headerColor;
+      display: block;
+
+      span {
+        color: $textColor;
+        display: block;
+        font-size: 12px;
+        line-height: 1.4em;
+        margin-top: 5px;
+
+        @include at-query($min, $postSmall) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  @include element(image) {
+    @include vertical-align();
+    display: none;
+    float: left;
+    height: 80px;
+    margin-right: 20px;
+    max-width: 60px;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+
+    @include at-query($min, $xsmall) {
+      display: block;
+    }
+
+    @include at-query($min, $postMedium) {
+      max-width: 80px;
+    }
+
+    img {
+      @include vertical-align();
+      display: block;
+      height: auto;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

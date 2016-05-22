@@ -1,0 +1,53 @@
+.cart {
+
+  @include element(checkout) {
+    background-color: $buttonColor;
+    border: 1px solid $buttonColor;
+    color: $backgroundColor;
+
+    &:hover,
+    &:focus {
+      background-color: $backgroundColor;
+      border-color: $buttonColor;
+      color: $buttonColor;
+    }
+  }
+
+  @include element(items) {
+    border-top: 1px solid $borderColor;
+    padding: 0;
+  }
+
+  @include element(footer) {
+    margin-top: 40px;
+
+    h3 {
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 16px;
+      text-align: right;
+
+      > span {
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      margin-bottom: 20px;
+      min-height: 88px;
+      width: 100%;
+
+      @include at-query($min, $postSmall) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
