@@ -1,3 +1,10 @@
+%cart-button {
+  min-width: 120px;
+  @include at-query($min, $xlarge) {
+    min-width: 180px;
+  }
+}
+
 %product-pricing {
   max-width: 100%;
   padding: 0;
