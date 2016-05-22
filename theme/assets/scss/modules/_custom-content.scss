@@ -1,0 +1,7 @@
+.custom-content {
+  font-size: 14px;
+  line-height: 1.7em;
+  margin: 0 #{"{% if settings.sidebar_position == 'right' %} auto {% endif %}"};
+  max-width: 700px;
+  width: 100%;
+}
