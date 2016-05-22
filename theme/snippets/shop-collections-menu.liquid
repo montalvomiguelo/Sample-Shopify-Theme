@@ -1,0 +1,15 @@
+<!-- /snippets/shop-collections-menu.liquid -->
+{% if shop-collections-menu %}
+  {% for link in linklists[shop-collections-menu].links %}
+    {% if link.type == 'collection_link' %}
+      {% assign collection = link.object %}
+      {% include 'shop-collections-menu-item' %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% for collection in collections %}
+    {% unless collection.handle == 'frontpage' %}
+      {% include 'shop-collections-menu-item' %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
