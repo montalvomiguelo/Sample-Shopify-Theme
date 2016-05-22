@@ -58,7 +58,7 @@
       "title": "Cart",
       "remove": "Remove",
       "note": "Special instructions for seller",
-      "subtotal": "Subtotal",
+      "subtotal": "Subtotal:",
       "shipping_at_checkout": "Shipping & taxes calculated at checkout",
       "update": "Update Cart",
       "checkout": "Check Out",
