@@ -128,12 +128,12 @@
     "settings": [
       {
         "type": "header",
-        "content": "Featured collection"
+        "content": "Featured products"
       },
       {
         "type": "collection",
         "id": "home_featured_products",
-        "label": "Featured collection"
+        "label": "Featured products collection"
       }
     ]
   },
@@ -164,25 +164,11 @@
       },
       {
         "type": "header",
-        "content": "Shop collections"
+        "content": "Shop vendors"
       },
       {
         "type": "checkbox",
-        "id": "sidebar_collections_enable",
-        "label": "Show shop collections"
-      },
-      {
-        "type": "link_list",
-        "id": "sidebar_collections_linklist",
-        "label": "Shop collections"
-      },
-      {
-        "type": "header",
-        "content": "Vendors"
-      },
-      {
-        "type": "checkbox",
-        "id": "sidebar_vendors_enable",
+        "id": "sidebar_shop_vendors_enable",
         "label": "Show shop vendors"
       },
       {
@@ -211,27 +197,31 @@
       {
         "type": "collection",
         "id": "sidebar_top_selling_collection",
-        "label": "Top selling collection"
+        "label": "Top selling products collection"
       },
       {
         "type": "header",
-        "content": "Additional menu"
+        "content": "Additional sidebar menu"
       },
       {
         "type": "checkbox",
         "id": "sidebar_additional_menu_enable",
-        "label": "Shop additional menu"
+        "label": "Show additional sidebar menu"
       },
       {
         "type": "link_list",
         "id": "sidebar_additional_menu",
-        "label": "Additional menu"
+        "label": "Additional sidebar menu"
       }
     ]
   },
   {
     "name": "Collection page",
     "settings": [
+      {
+        "type": "header",
+        "content": "Layout, pagination"
+      },
       {
         "type": "select",
         "id": "collections_products_per_row",
@@ -297,6 +287,15 @@
             "label": "10"
           }
         ]
+      },
+      {
+        "type": "header",
+        "content": "All collections page"
+      },
+      {
+        "type": "link_list",
+        "id": "ll_collections",
+        "label": "Collections link list"
       }
     ]
   },
