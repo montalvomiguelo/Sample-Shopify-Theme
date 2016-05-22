@@ -76,7 +76,7 @@
           {% if settings.show_search %}
             <li class="side_search">
               <form class="search-form" action="/search" method="get" role="search">
-                <input class="search-form__input" id="search" name="q" type="text" autocomplete="off" />
+                <input class="search-form__input" id="search" name="q" type="text" autocomplete="off" value="{{ search.terms | escape }}" />
                 <label class="search-form__label" for="search">{{ 'general.search.placeholder' | t }}</label>
               </form>
             </li>
