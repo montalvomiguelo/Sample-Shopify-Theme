@@ -1,8 +1,5 @@
 %cart-button {
-  min-width: 120px;
-  @include at-query($min, $xlarge) {
-    min-width: 180px;
-  }
+  width: 100%;
 }
 
 %product-pricing {

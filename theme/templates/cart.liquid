@@ -48,8 +48,14 @@
       <div class="grid__item text-right medium--one-half large--one-half xlarge--one-half">
         <h3 class="cart__subtotal">{{ 'cart.general.subtotal' | t }} <span>{{ cart.total_price | money }}</span></h3>
         <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
-        <button type="submit" name="update" title="{{ 'cart.general.update' | t }}" class="cart__update">{{ 'cart.general.update' | t }}</button>
-        <button type="submit" name="checkout" title="{{ 'cart.general.checkout' | t }}" class="cart__checkout">{{ 'cart.general.checkout' | t }}</button>
+        <div class="grid">
+          <div class="grid__item one-half">
+            <button type="submit" name="update" title="{{ 'cart.general.update' | t }}" class="cart__update">{{ 'cart.general.update' | t }}</button>
+          </div>
+          <div class="grid__item one-half">
+            <button type="submit" name="checkout" title="{{ 'cart.general.checkout' | t }}" class="cart__checkout">{{ 'cart.general.checkout' | t }}</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
