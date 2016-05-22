@@ -37,7 +37,7 @@
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
   <div class="mobile-nav">
-    <a class="icon-hamburger left" href="#" title="Menu">
+    <a class="icon-hamburger left" href="#" title="{{ 'layout.navigation.menu' | t }}">
       <span></span>
       <span></span>
       <span></span>
@@ -67,17 +67,17 @@
         <span class="side-cart__cost">{{ cart.total_price | money }}</span>
       </a>
       <div class="sidebar-menu-container">
-        <h3 class="sidebar-menu-container__title">Shop</h3>
+        <h3 class="sidebar-menu-container__title">{{ 'layout.navigation.shop' | t }}</h3>
         <ul class="sidebar-menu">
           {% comment %}
             The page shown at /collections/all is referred to as the catalog page.
           {% endcomment %}
-          <li class="sidebar-menu__item"><a href="/collections/all">All Products</a></li>
+          <li class="sidebar-menu__item"><a href="/collections/all">{{ 'collections.general.all_products' | t }}</a></li>
           {% if settings.show_search %}
             <li class="side_search">
               <form class="search-form" action="/search" method="get" role="search">
                 <input class="search-form__input" id="search" name="q" type="text" autocomplete="off" />
-                <label class="search-form__label" for="search">Search...</label>
+                <label class="search-form__label" for="search">{{ 'general.search.placeholder' | t }}</label>
               </form>
             </li>
           {% endif %}
@@ -92,7 +92,7 @@
 
       {% if settings.sidebar_vendors_enable %}
         <div class="sidebar-menu-container">
-          <h3 class="sidebar-menu-container__title">Vendors</h3>
+          <h3 class="sidebar-menu-container__title">{{ 'layout.navigation.vendors' | t }}</h3>
           <ul class="sidebar-menu">
             {% for product_vendor in shop.vendors %}
               <li class="sidebar-menu__item">{{ product_vendor | link_to_vendor }}</li>
@@ -104,7 +104,7 @@
       {% if settings.sidebar_newest_products_enable %}
         {% assign newestCollection = settings.sidebar_newest_products_collection %}
         <div class="sidebar-menu-container">
-          <h3 class="sidebar-menu-container__title">Newest Products</h3>
+          <h3 class="sidebar-menu-container__title">{{ 'collections.general.newest_products' | t }}</h3>
           <ul class="sidebar-menu">
             {% for product in collections[newestCollection].products limit: 5 %}
               <li class="sidebar-menu__item"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></li>
@@ -116,7 +116,7 @@
       {% if settings.sidebar_top_selling_enable %}
         {% assign topSellingCollection = settings.sidebar_top_selling_collection %}
         <div class="sidebar-menu-container">
-          <h3 class="sidebar-menu-container__title">Top Selling</h3>
+          <h3 class="sidebar-menu-container__title">{{ 'collections.general.top_selling' | t }}</h3>
           <ul class="sidebar-menu">
             {% for product in collections[topSellingCollection].products limit: 5 %}
               <li class="sidebar-menu__item"><a href="{{ product.url | within: collection }}">{{ product.title }}</a></li>
