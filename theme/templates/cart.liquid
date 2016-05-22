@@ -41,11 +41,11 @@
         For the special instructions to be submitted with order,
         we need to use a name attribute set to 'note'.
       {% endcomment %}
-      <div class="grid__item medium--one-half large--one-half xlarge--one-half">
+      <div class="grid__item medium--five-twelfths large--five-twelfths xlarge--five-twelfths">
         <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
         <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
       </div>
-      <div class="grid__item text-right medium--one-half large--one-half xlarge--one-half">
+      <div class="grid__item text-right medium--seven-twelfths large--seven-twelfths xlarge--seven-twelfths">
         <h3 class="cart__subtotal">{{ 'cart.general.subtotal' | t }} <span>{{ cart.total_price | money }}</span></h3>
         <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
         <div class="grid">
