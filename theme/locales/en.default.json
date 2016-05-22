@@ -21,7 +21,7 @@
       "no_results_html": "Your search for \"{{ terms }}\" did not yield any results.",
       "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
       "title": "Search for products on our site",
-      "placeholder": "Search our store",
+      "placeholder": "Search...",
       "submit": "Search"
     }
   },
@@ -77,6 +77,9 @@
   "collections": {
     "general": {
       "all_of_collection": "All {{ collection }}",
+      "all_products": "All Products",
+      "newest_products": "Newest Products",
+      "top_selling": "Top Selling",
       "no_matches": "Sorry, there are no products in this collection",
       "link_title": "Browse our {{ title }} collection",
       "grid_view": "Grid view",
@@ -235,7 +238,9 @@
   },
   "layout": {
     "navigation": {
-      "menu": "Menu"
+      "menu": "Menu",
+      "shop": "Shop",
+      "vendors": "Vendors"
     },
     "drawers": {
       "browse": "Browse",
@@ -265,7 +270,7 @@
     "general": {
       "previous_product_html": "&larr; Previous Product",
       "next_product_html": "Next Product &rarr;",
-      "from_text_html": "From {{ price }}",
+      "from_text_html": "From",
       "sale_price": "Sale price",
       "regular_price": "Regular price"
     },
