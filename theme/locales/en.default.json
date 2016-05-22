@@ -84,9 +84,15 @@
       "link_title": "Browse our {{ title }} collection",
       "grid_view": "Grid view",
       "list_view": "List view",
+      "page_title": "Collections",
       "items_with_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      },
+      "products_with_count": {
+        "zero": "0 products",
+        "one": "1 product",
+        "other": "{{ count }} products"
       }
     },
     "sidebar": {

@@ -1,0 +1,16 @@
+<!-- /snippets/collection-grid-item.liquid -->
+{% unless grid_item_width %}
+  {% assign grid_item_width = 'small--one-half medium--one-third large--one-third xlarge--one-third' %}
+{% endunless %}
+
+<div class="product grid__item {{ grid_item_width }}">
+  <a class="product__link" href="{{ collection.url }}">
+    {% if collection.image %}
+      <img class="product__image" src="{{ collection | img_url: 'grande' }}" alt="{{ collection.image.alt | escape }}" />
+    {% else %}
+      <img class="product__image" src="{{ collection.products.first | img_url: 'grande' }}" alt="{{ collection.title | escape }}" />
+    {% endif %}
+    <h4 class="product__name">{{ collection.title }}</h4>
+    <h5 class="product__price">{{ 'collections.general.products_with_count' | t: count: collection.all_products_count }}</h5>
+  </a>
+</div>

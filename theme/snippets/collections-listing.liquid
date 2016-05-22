@@ -1,0 +1,23 @@
+<!-- /snippets/collection-listing.liquid -->
+{% if collection-listing == '' or template == 'list-collections' %}
+<h1>{{ 'collections.general.page_title' | t }}</h1>
+{% else %}
+<h1>{{ linklists[collections-listing].title }}</h1>
+{% endif %}
+
+<div class="grid-uniform">
+  {% if collections-listing %}
+    {% for link in linklists[collections-listing].links %}
+      {% if link.type == 'collection_link' %}
+        {% assign collection = link.object %}
+        {% include 'collection-grid-item' %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% for collection in collections %}
+      {% unless collection.handle == 'frontpage' %}
+        {% include 'collection-grid-item' %}
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+</div>
