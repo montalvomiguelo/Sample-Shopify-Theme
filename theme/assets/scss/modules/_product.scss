@@ -27,22 +27,11 @@
   }
 
   @include element(name) {
-    font-size: 14px;
-    line-height: 1.3em;
-    margin-top: 10px;
+    @extend %product-name;
   }
 
   @include element(price) {
-    @include transition(all .3s ease);
-    color: $textColor;
-    display: inline-block;
-    font-family: $bodyFontStack;
-    font-size: 12px;
-    line-height: 1.4em;
-    margin-top: 5px;
-    @include at-query($min, $postSmall) {
-      font-size: 13px;
-    }
+    @extend %product-price;
 
     s {
       opacity: .8;
