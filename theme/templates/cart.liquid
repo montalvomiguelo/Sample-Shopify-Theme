@@ -1,0 +1,61 @@
+<!-- /templates/cart.liquid -->
+{% comment %}
+
+  For info on test orders:
+    - General http://docs.shopify.com/manual/your-store/orders/test-orders
+    - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
+
+{% endcomment %}
+<h1>{{ 'cart.general.title' | t }}</h1>
+{% if cart.item_count > 0 %}
+<form action="/cart" method="post" novalidate class="cart">
+  <ul class="cart__items">
+    {% for item in cart.items %}
+      <li class="cart-item">
+        <a href="{{ item.url | within: collections.all }}" class="cart-item__image">
+          <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+        </a>
+        <div class="cart-item__details">
+          <a href="{{ item.url }}">
+            {{ item.product.title }}
+            {% unless item.variant.title contains 'Default' %}
+              <span>{{ item.variant.title }}</span>
+            {% endunless %}
+          </a>
+        </div>
+        <div class="cart-item__actions">
+          <div class="quantity">
+            <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
+          </div>
+          <div class="price">{{ item.line_price | money }}</div>
+          <div class="remove">
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><svg class="remove_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.1 14.1" enable-background="new 0 0 14.1 14.1"><path d="M14.1 1.1l-1.1-1.1-6 6-5.9-6-1.1 1.1 6 5.9-6 6 1.1 1.1 5.9-6 6 6 1.1-1.1-6-6z"/></svg></a>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="cart__footer">
+    <div class="grid cart__row">
+      {% comment %}
+        For the special instructions to be submitted with order,
+        we need to use a name attribute set to 'note'.
+      {% endcomment %}
+      <div class="grid__item medium--one-half large--one-half xlarge--one-half">
+        <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+        <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+      </div>
+      <div class="grid__item text-right medium--one-half large--one-half xlarge--one-half">
+        <h3 class="cart__subtotal">{{ 'cart.general.subtotal' | t }} <span>{{ cart.total_price | money }}</span></h3>
+        <p><em>{{ 'cart.general.shipping_at_checkout' | t }}</em></p>
+        <button type="submit" name="update" title="{{ 'cart.general.update' | t }}" class="cart__update">{{ 'cart.general.update' | t }}</button>
+        <button type="submit" name="checkout" title="{{ 'cart.general.checkout' | t }}" class="cart__checkout">{{ 'cart.general.checkout' | t }}</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% else %}
+<div class="empty_cart">
+  <p><strong>Your cart is empty!</strong> Sounds like a good time to <a href="/">start shopping.</a></p>
+</div>
+{% endif %}
