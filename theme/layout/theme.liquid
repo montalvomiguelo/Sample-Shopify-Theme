@@ -82,15 +82,15 @@
             </li>
           {% endif %}
 
-          {% if settings.sidebar_collections_enable %}
-            {% for link in linklists[settings.sidebar_collections_linklist].links %}
-              <li class="sidebar-menu__item"><a href="{{ link.url }}">{{ link.title }}</a></li>
-            {% endfor %}
+          {% if settings.ll_collections != '' and linklists[settings.ll_collections].links.size > 0 %}
+            {% include 'shop-collections-menu' with settings.ll_collections %}
+          {% else %}
+            {% include 'shop-collections-menu' %}
           {% endif %}
         </ul>
       </div>
 
-      {% if settings.sidebar_vendors_enable %}
+      {% if settings.sidebar_shop_vendors_enable %}
         <div class="sidebar-menu-container">
           <h3 class="sidebar-menu-container__title">{{ 'layout.navigation.vendors' | t }}</h3>
           <ul class="sidebar-menu">
