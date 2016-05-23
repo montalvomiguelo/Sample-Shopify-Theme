@@ -102,3 +102,10 @@
   top: 50%;
   @include prefixer(transform, translateY(-50%), webkit ms spec);
 }
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
