@@ -16,17 +16,11 @@
     <h1>{{ 'general.search.results_for_html' | t: terms: search.terms }}</h1>
   {% endif %}
 {% else %}
-  <h1>{{ 'general.search.title' | t }}</h1>
+  <form action="/search" method="get" class="search-bar-page" role="search">
+    <input type="hidden" name="type" value="product" />
+    <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="search-bar-page__input" autofocus autocomplete="off">
+  </form>
 {% endif %}
-
-{% case products_per_row %}
-  {% when '2' %}
-    {% assign grid_item_width = 'small--one-half medium--one-half large--one-half xlarge--one-half' %}
-  {% when '3' %}
-    {% assign grid_item_width = 'small--one-half medium--one-half large--one-third xlarge--one-third' %}
-  {% when '4' %}
-    {% assign grid_item_width = 'small--one-half medium--one-half large--one-third xlarge--one-quarter' %}
-{% endcase %}
 
 {% if search.performed %}
 
