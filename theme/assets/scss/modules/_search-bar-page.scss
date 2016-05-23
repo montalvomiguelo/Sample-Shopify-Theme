@@ -3,7 +3,6 @@
   @include element(input) {
     @include placeholder {
       color: $headerColor;
-      text-align: center;
     }
     border: none;
     color: $headerColor;
