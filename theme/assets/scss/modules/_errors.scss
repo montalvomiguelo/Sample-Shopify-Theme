@@ -1,0 +1,5 @@
+.errors {
+  @extend %errors;
+  background: $errorRed;
+  color: #FAFAFA;
+}

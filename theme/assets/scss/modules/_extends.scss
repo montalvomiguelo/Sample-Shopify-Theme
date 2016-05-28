@@ -2,6 +2,26 @@
   width: 100%;
 }
 
+%contact-form__element {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  @include at-query($min, $postSmall) {
+    display: inline-block;
+    width: 48%;
+  }
+}
+
+%errors {
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 20px;
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
 %product-name {
   font-size: 14px;
   line-height: 1.3em;
