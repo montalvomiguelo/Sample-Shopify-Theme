@@ -34,10 +34,12 @@ module.exports = (grunt) ->
         compress: IS_PRODUCTION
         mangle: IS_PRODUCTION
         beautify: not IS_PRODUCTION
+        sourceMap: not IS_PRODUCTION
       theme:
         files:
           '.build/assets/script.js.liquid': [
             'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+            'node_modules/flexslider/jquery.flexslider.js',
             'theme/assets/js/theme.js'
           ]
 
@@ -134,10 +136,11 @@ module.exports = (grunt) ->
         tasks: ['newer:copy']
 
   # Production-specific configuration.
-  grunt.config 'newer'
-    options:
-      override: (detail, include) ->
-        include(true)
+  if IS_PRODUCTION
+    grunt.config 'newer'
+      options:
+        override: (detail, include) ->
+          include(true)
 
   # Load tasks made available through NPM.
   grunt.loadNpmTasks 'grunt-contrib-clean'
