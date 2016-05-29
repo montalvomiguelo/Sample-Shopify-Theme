@@ -1,0 +1,7 @@
+.tags {
+  margin-bottom: 40px;
+
+  @include element(item) {
+    list-style: none;
+  }
+}

@@ -1,0 +1,5 @@
+.form-success {
+  @extend %errors;
+  background: $successGreen;
+  color: #FAFAFA;
+}
