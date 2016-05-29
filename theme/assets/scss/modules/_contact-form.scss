@@ -52,4 +52,12 @@
       }
     }
   }
+
+  @include element(title) {
+    margin-bottom: 20px;
+  }
+
+  @include element(notes) {
+    margin: 0;
+  }
 }
