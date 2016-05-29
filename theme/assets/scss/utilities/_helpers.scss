@@ -1,3 +1,7 @@
 .no-bullets {
   list-style: none;
 }
+
+.vertical-align {
+  @include vertical-align;
+}

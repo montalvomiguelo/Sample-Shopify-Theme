@@ -1,9 +1,7 @@
 .icon-hamburger {
   @include transition(all .3s ease);
-  @include vertical-align;
   display: block;
   height: 14px;
-  position: relative;
   width: 22px;
 
   span {
@@ -25,11 +23,10 @@
     &:nth-child(2),
     &:nth-child(3) {
       top: 50%;
-      margin-top: -1px;
     }
 
     &:nth-child(4) {
-      bottom: 0;
+      top: 99%;
     }
 
   }
