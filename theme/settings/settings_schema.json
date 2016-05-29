@@ -128,6 +128,106 @@
     "settings": [
       {
         "type": "header",
+        "content": "Slideshow Banner"
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_1",
+        "label": "Enable"
+      },
+      {
+        "type": "image",
+        "id": "slideshow_1.jpg",
+        "label": "Image",
+        "max-width": 1000,
+        "info": "1000 x 400px recommended"
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_2",
+        "label": "Enable"
+      },
+      {
+        "type": "image",
+        "id": "slideshow_2.jpg",
+        "label": "Image",
+        "max-width": 1000,
+        "info": "1000 x 400px recommended"
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_3",
+        "label": "Enable"
+      },
+      {
+        "type": "image",
+        "id": "slideshow_3.jpg",
+        "label": "Image",
+        "max-width": 1000,
+        "info": "1000 x 400px recommended"
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide 4"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_4",
+        "label": "Enable"
+      },
+      {
+        "type": "image",
+        "id": "slideshow_4.jpg",
+        "label": "Image",
+        "max-width": 1000,
+        "info": "1000 x 400px recommended"
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_5",
+        "label": "Enable"
+      },
+      {
+        "type": "image",
+        "id": "slideshow_5.jpg",
+        "label": "Image",
+        "max-width": 1000,
+        "info": "1000 x 400px recommended"
+      },
+      {
+        "type": "paragraph",
+        "content": "Slide 6"
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_6",
+        "label": "Enable"
+      },
+      {
+        "type": "image",
+        "id": "slideshow_6.jpg",
+        "label": "Image",
+        "max-width": 1000,
+        "info": "1000 x 400px recommended"
+      },
+      {
+        "type": "header",
         "content": "Featured products"
       },
       {
