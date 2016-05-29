@@ -6,6 +6,10 @@ theme.initCache = function () {
     $html : $('html'),
     $body : $('body'),
 
+    // Home
+    $sliderHome: $('.flexslider'),
+    $sliderNav: $('.flex-nav a'),
+
     // Product Page
     $productPhoto: $('#ProductPhoto'),
     $productImage : $('#ProductPhotoImg'),
@@ -16,6 +20,7 @@ theme.initCache = function () {
 
 theme.init = function() {
   theme.initCache();
+  theme.sliderHome();
   theme.productImageSwitch();
   theme.productImageGallery();
 };
@@ -120,6 +125,16 @@ theme.productImageGallery = function() {
     var imageId = $(this).children('img').attr('data-image-id');
     theme.cache.$productImageGallery.filter('[data-image-id="' + imageId + '"]').trigger('click');
   });
+};
+
+
+theme.sliderHome = function() {
+  if (theme.cache.$sliderHome.length) {
+    theme.cache.$sliderHome.flexslider({
+      animation: "slide",
+      customDirectionNav: theme.cache.$sliderNav,
+    });
+  }
 };
 
 // Initialize Theme's JS on docready
