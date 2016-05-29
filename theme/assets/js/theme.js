@@ -6,6 +6,10 @@ theme.initCache = function () {
     $html : $('html'),
     $body : $('body'),
 
+    // Navigation
+    $openMenu : $('.open-menu'),
+    $siteSidebar: $('.site-sidebar'),
+
     // Home
     $sliderHome: $('.flexslider'),
     $sliderNav: $('.flex-nav a'),
@@ -21,6 +25,7 @@ theme.initCache = function () {
 theme.init = function() {
   theme.initCache();
   theme.sliderHome();
+  theme.navigation();
   theme.productImageSwitch();
   theme.productImageGallery();
 };
@@ -135,6 +140,14 @@ theme.sliderHome = function() {
       customDirectionNav: theme.cache.$sliderNav,
     });
   }
+};
+
+theme.navigation = function() {
+  theme.cache.$openMenu.on('click', function(evt) {
+    evt.preventDefault();
+    $(this).toggleClass('is-open');
+    theme.cache.$siteSidebar.toggleClass('is-open');
+  });
 };
 
 // Initialize Theme's JS on docready
