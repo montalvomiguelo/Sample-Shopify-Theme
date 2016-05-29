@@ -156,3 +156,11 @@ option {
   background-color: #fff;
   color: #000;
 }
+
+hr {
+  border-top: solid $borderColor;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+  margin: $gridGutter 0;
+}
