@@ -1,0 +1,38 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "background_color ": "#FCFCFC",
+      "text_color": "#646464",
+      "link_color": "#717C82",
+      "link_hover_color": "#2E2E2E",
+      "header_color": "#507B96",
+      "button_color": "#2B4759",
+      "secondary_background": "#F7F7F7",
+      "border_color": "#E5E5E5",
+      "use_logo": false,
+      "favicon_enable": false,
+      "header_position": "center",
+      "sidebar_position": "right",
+      "show_search": true,
+      "ll_collections": "",
+      "sidebar_shop_vendors_enable": false,
+      "sidebar_newest_products_enable": true,
+      "sidebar_newest_products_collection": "frontpage",
+      "sidebar_top_selling_enable": false,
+      "sidebar_top_selling_collection": "frontpage",
+      "sidebar_additional_menu_enable": true,
+      "sidebar_additional_menu": "footer",
+      "home_featured_products": "frontpage",
+      "collections_products_per_row": "3",
+      "collections_rows": "4",
+      "slide_1": true,
+      "slide_2": true,
+      "social_twitter_link": "http:\/\/twitter.com\/shopify",
+      "social_facebook_link": "http:\/\/facebook.com\/shopify",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_pinterest_link": ""
+    }
+  }
+}
