@@ -164,3 +164,22 @@ hr {
   height: 0;
   margin: $gridGutter 0;
 }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  height: auto;
+  margin: 0 8px 0 0;
+  padding: 0;
+  width: auto;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+}
