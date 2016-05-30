@@ -43,13 +43,7 @@
     width: 100%;
 
     button {
-      cursor: pointer;
-      width: 100%;
-      @include at-query($min, $postSmall) {
-        display: block;
-        margin: 40px auto;
-        width: 320px;
-      }
+      @extend %contact-form__submit;
     }
   }
 
