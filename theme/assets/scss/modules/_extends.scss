@@ -13,6 +13,16 @@
   }
 }
 
+%contact-form__submit {
+  cursor: pointer;
+  margin: 40px auto;
+  width: 100%;
+  @include at-query($min, $postSmall) {
+    display: block;
+    width: 320px;
+  }
+}
+
 %errors {
   border-radius: 2px;
   font-size: 14px;
