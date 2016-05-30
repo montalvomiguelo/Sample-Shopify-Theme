@@ -1,0 +1,57 @@
+.form-vertical {
+
+  @include element(item) {
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+
+    @include at-query($min, $postSmall) {
+      margin-bottom: 20px;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: auto;
+  }
+
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: inline;
+  }
+
+  button {
+    @extend %contact-form__submit;
+    & + button {
+      margin-top: 10px;
+    }
+  }
+
+  span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .grid {
+    margin-bottom: 15px;
+    @include at-query($min, $postSmall) {
+      margin-bottom: 20px;
+    }
+  }
+
+
+}
