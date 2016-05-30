@@ -1,0 +1,43 @@
+<!-- /templates/customers/register.liquid -->
+
+<div class="page-content">
+
+  <h1>{{ 'customer.register.title' | t }}</h1>
+
+  <div class="form-vertical">
+    {% form 'create_customer' %}
+
+      {{ form.errors | default_errors }}
+
+      <div class="form-vertical__item">
+        <label for="FirstName">{{ 'customer.register.first_name' | t }}</label>
+        <input type="text" name="customer[first_name]" id="FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+      </div>
+
+      <div class="form-vertical__item">
+        <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
+        <input type="text" name="customer[last_name]" id="LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+      </div>
+
+      <div class="form-vertical__item">
+        <label for="Email">{{ 'customer.register.email' | t }}</label>
+        <input type="email" name="customer[email]" id="Email" class="{% if form.errors contains 'email' %}error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+      </div>
+
+      <div class="form-vertical__item">
+        <label for="CreatePassword">{{ 'customer.register.password' | t }}</label>
+        <input type="password" name="customer[password]" id="CreatePassword" class="{% if form.errors contains 'password' %}error{% endif %}">
+      </div>
+
+      <div class="form-vertical__item">
+        <button class="margin-bottom--zero" type="submit" title="{{ 'customer.register.submit' | t }}">{{ 'customer.register.submit' | t }}</button>
+      </div>
+
+      <p class="text-center">
+        <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a>
+      </p>
+
+    {% endform %}
+  </div>
+
+</div>
