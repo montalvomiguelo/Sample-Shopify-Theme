@@ -19,6 +19,14 @@ theme.initCache = function () {
     $productImage : $('#ProductPhotoImg'),
     $productThumbs : $('#ProductThumbs'),
     $productImageGallery: $('.gallery__item'),
+
+    // Customer Pages
+    $recoverPasswordLink     : $('#RecoverPassword'),
+    $hideRecoverPasswordLink : $('#HideRecoverPasswordLink'),
+    $recoverPasswordForm     : $('#RecoverPasswordForm'),
+    $customerLoginForm       : $('#CustomerLoginForm'),
+    $passwordResetSuccess    : $('#ResetSuccess'),
+
   };
 };
 
@@ -28,6 +36,7 @@ theme.init = function() {
   theme.navigation();
   theme.productImageSwitch();
   theme.productImageGallery();
+  theme.loginForms();
 };
 
 theme.productPage = function (options) {
@@ -148,6 +157,37 @@ theme.navigation = function() {
     $(this).toggleClass('is-open');
     theme.cache.$siteSidebar.toggleClass('is-open');
   });
+};
+
+theme.loginForms = function() {
+  function showRecoverPasswordForm() {
+    theme.cache.$recoverPasswordForm.show();
+    theme.cache.$customerLoginForm.hide();
+  }
+
+  function hideRecoverPasswordForm() {
+    theme.cache.$recoverPasswordForm.hide();
+    theme.cache.$customerLoginForm.show();
+  }
+
+  theme.cache.$recoverPasswordLink.on('click', function(evt) {
+    evt.preventDefault();
+    showRecoverPasswordForm();
+  });
+
+  theme.cache.$hideRecoverPasswordLink.on('click', function(evt) {
+    evt.preventDefault();
+    hideRecoverPasswordForm();
+  });
+
+  // Allow deep linking to recover password form
+  if (theme.getHash() == '#recover') {
+    showRecoverPasswordForm();
+  }
+};
+
+theme.getHash = function () {
+  return window.location.hash;
 };
 
 // Initialize Theme's JS on docready
