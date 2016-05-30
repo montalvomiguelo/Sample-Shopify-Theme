@@ -43,21 +43,6 @@ module.exports = (grunt) ->
             'theme/assets/js/theme.js'
           ]
 
-    # Optimisation of image assets.
-    imagemin:
-      options:
-        optimizationLevel: if IS_PRODUCTION then 7 else 0
-        progressive: IS_PRODUCTION
-        interlaced: IS_PRODUCTION
-      assets:
-        files: [{
-          expand: true,
-          flatten: true,
-          cwd: 'theme/assets/static',
-          src: [IMAGE_ASSET_PATTERN],
-          dest: '.build/assets'
-        }]
-
     # Copying of various theme files.
     copy:
       layout:
@@ -73,7 +58,7 @@ module.exports = (grunt) ->
       settings:
         expand: true
         cwd: 'theme/settings'
-        src: 'settings_schema.json'
+        src: '*.json'
         dest: '.build/config'
       snippets:
         expand: true
@@ -90,6 +75,12 @@ module.exports = (grunt) ->
         flatten: true
         cwd: 'theme/assets/static'
         src: [STATIC_ASSETS_PATTERN]
+        dest: '.build/assets'
+      images:
+        expand: true
+        flatten: true
+        cwd: 'theme/assets/static',
+        src: [IMAGE_ASSET_PATTERN],
         dest: '.build/assets'
 
     # Compression to a .zip for direct upload to Shopify Admin.
@@ -121,33 +112,22 @@ module.exports = (grunt) ->
       uglify:
         files: ['theme/assets/js/**/*.js']
         tasks: ['newer:uglify']
-      imagemin:
-        files: ['theme/assets/static/' + IMAGE_ASSET_PATTERN]
-        tasks: ['newer:imagemin']
       copy:
         files: [
           'theme/layout/*.liquid',
           'theme/locales/*.json',
-          'theme/settings/settings_schema.json',
+          'theme/settings/*.json',
           'theme/snippets/*.liquid',
           'theme/templates/**/*.liquid',
           'theme/assets/static/' + STATIC_ASSETS_PATTERN
         ]
         tasks: ['newer:copy']
 
-  # Production-specific configuration.
-  if IS_PRODUCTION
-    grunt.config 'newer'
-      options:
-        override: (detail, include) ->
-          include(true)
-
   # Load tasks made available through NPM.
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-copy'
-  grunt.loadNpmTasks 'grunt-contrib-imagemin'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
@@ -155,6 +135,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-newer'
 
   # Register tasks made available through the Gruntfile.
-  grunt.registerTask 'build',   ['newer:sass', 'newer:uglify', 'newer:imagemin', 'newer:copy']
+  grunt.registerTask 'build',   ['newer:sass', 'newer:uglify', 'newer:copy']
   grunt.registerTask 'dist',    ['build', 'compress']
   grunt.registerTask 'default', ['build', 'watch']
