@@ -1,3 +1,20 @@
+.color-header {
+  color: $headerColor;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.margin-bottom {
+  @include modifier(gutter) {
+    margin-bottom: $gridGutter;
+  }
+  @include modifier(zero) {
+    margin-bottom: 0 !important;
+  }
+}
+
 .no-bullets {
   list-style: none;
 }
