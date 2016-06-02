@@ -21,8 +21,8 @@ $successGreen: #63B726;
 $successGreenBg: #ecfef0;
 
 // Font stacks
-$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bodyFontStack: #{'{{ settings.primary_font}}'};
+$headerFontStack: #{'{{ settings.secondary_font}}'};
 
 // Breakpoints and Grid Variables
 $viewportIncrement: 1px;
