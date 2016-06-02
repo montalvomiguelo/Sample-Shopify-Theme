@@ -10,6 +10,8 @@
       "button_color": "#2B4759",
       "secondary_background": "#F7F7F7",
       "border_color": "#E5E5E5",
+      "primary_font": "Helvetica, Arial, sans-serif",
+      "secondary_font": "Helvetica, Arial, sans-serif",
       "use_logo": false,
       "favicon_enable": false,
       "header_position": "center",
