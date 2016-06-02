@@ -14,55 +14,6 @@
     ]
   },
   {
-    "name": "Header",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "checkbox",
-        "id": "use_logo",
-        "label": "Use custom logo"
-      },
-      {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Custom logo",
-        "max-width": 1300,
-        "max-height": 250,
-        "info": "Good for an image up to 1300 by 250 pixels"
-      },
-      {
-        "type": "select",
-        "id": "header_position",
-        "options": [
-          { "value": "left", "label": "Left"},
-          { "value": "center", "label": "Center"},
-          { "value": "right", "label": "Right"}
-        ],
-        "label": "Header alignment"
-      },
-      {
-        "type": "header",
-        "content": "Favicon"
-      },
-      {
-        "type": "checkbox",
-        "id": "favicon_enable",
-        "label": "Use custom icon"
-      },
-      {
-        "type": "image",
-        "id": "favicon.png",
-        "label": "Icon",
-        "max-width": 32,
-        "max-height": 32,
-        "info": "32 x 32px .png required"
-      }
-    ]
-  },
-  {
     "name": "Colors",
     "settings": [
       {
@@ -120,6 +71,156 @@
         "id": "border_color",
         "label": "Borders",
         "default": "#E5E5E5"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Primary font"
+      },
+      {
+        "type": "font",
+        "id": "primary_font",
+        "label": "Primary font"
+      },
+      {
+        "type": "header",
+        "content": "Secondary font"
+      },
+      {
+        "type": "font",
+        "id": "secondary_font",
+        "label": "Secondary font"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_logo",
+        "label": "Use custom logo"
+      },
+      {
+        "type": "image",
+        "id": "logo.png",
+        "label": "Custom logo",
+        "max-width": 1300,
+        "max-height": 250,
+        "info": "Good for an image up to 1300 by 250 pixels"
+      },
+      {
+        "type": "select",
+        "id": "header_position",
+        "options": [
+          { "value": "left", "label": "Left"},
+          { "value": "center", "label": "Center"},
+          { "value": "right", "label": "Right"}
+        ],
+        "label": "Header alignment"
+      },
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "checkbox",
+        "id": "favicon_enable",
+        "label": "Use custom icon"
+      },
+      {
+        "type": "image",
+        "id": "favicon.png",
+        "label": "Icon",
+        "max-width": 32,
+        "max-height": 32,
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Sidebar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Position"
+      },
+      {
+        "type": "select",
+        "id": "sidebar_position",
+        "options": [
+          { "value": "left", "label": "Left"},
+          { "value": "right", "label": "Right"}
+        ],
+        "label": "Sidebar position"
+      },
+      {
+        "type": "header",
+        "content": "Search"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show search"
+      },
+      {
+        "type": "header",
+        "content": "Shop vendors"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_shop_vendors_enable",
+        "label": "Show shop vendors"
+      },
+      {
+        "type": "header",
+        "content": "Newest products"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_newest_products_enable",
+        "label": "Show newest products"
+      },
+      {
+        "type": "collection",
+        "id": "sidebar_newest_products_collection",
+        "label": "Newest products collection"
+      },
+      {
+        "type": "header",
+        "content": "Top selling products"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_top_selling_enable",
+        "label": "Show top selling products"
+      },
+      {
+        "type": "collection",
+        "id": "sidebar_top_selling_collection",
+        "label": "Top selling products collection"
+      },
+      {
+        "type": "header",
+        "content": "Additional sidebar menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_additional_menu_enable",
+        "label": "Show additional sidebar menu"
+      },
+      {
+        "type": "link_list",
+        "id": "sidebar_additional_menu",
+        "label": "Additional sidebar menu"
       }
     ]
   },
@@ -234,84 +335,6 @@
         "type": "collection",
         "id": "home_featured_products",
         "label": "Featured products collection"
-      }
-    ]
-  },
-  {
-    "name": "Sidebar",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Position"
-      },
-      {
-        "type": "select",
-        "id": "sidebar_position",
-        "options": [
-          { "value": "left", "label": "Left"},
-          { "value": "right", "label": "Right"}
-        ],
-        "label": "Sidebar position"
-      },
-      {
-        "type": "header",
-        "content": "Search"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_search",
-        "label": "Show search"
-      },
-      {
-        "type": "header",
-        "content": "Shop vendors"
-      },
-      {
-        "type": "checkbox",
-        "id": "sidebar_shop_vendors_enable",
-        "label": "Show shop vendors"
-      },
-      {
-        "type": "header",
-        "content": "Newest products"
-      },
-      {
-        "type": "checkbox",
-        "id": "sidebar_newest_products_enable",
-        "label": "Show newest products"
-      },
-      {
-        "type": "collection",
-        "id": "sidebar_newest_products_collection",
-        "label": "Newest products collection"
-      },
-      {
-        "type": "header",
-        "content": "Top selling products"
-      },
-      {
-        "type": "checkbox",
-        "id": "sidebar_top_selling_enable",
-        "label": "Show top selling products"
-      },
-      {
-        "type": "collection",
-        "id": "sidebar_top_selling_collection",
-        "label": "Top selling products collection"
-      },
-      {
-        "type": "header",
-        "content": "Additional sidebar menu"
-      },
-      {
-        "type": "checkbox",
-        "id": "sidebar_additional_menu_enable",
-        "label": "Show additional sidebar menu"
-      },
-      {
-        "type": "link_list",
-        "id": "sidebar_additional_menu",
-        "label": "Additional sidebar menu"
       }
     ]
   },
