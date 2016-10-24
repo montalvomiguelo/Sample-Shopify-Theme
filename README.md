@@ -4,9 +4,9 @@
 
 * [Shopify Theme](https://github.com/Shopify/shopify_theme): A console tool for interacting with Shopify Theme Assets.
 
-# Inspired by
+# Author
 
-* [Lunch Break](https://blog.bigcartel.com/introducing-the-lunch-break-theme/): Is a clean, easy-to-navigate theme by bigcartel.
+https://blog.bigcartel.com/introducing-the-lunch-break-theme/
 
 # Demo 
 http://desarrollo-2.myshopify.com
