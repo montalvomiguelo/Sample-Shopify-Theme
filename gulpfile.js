@@ -58,8 +58,9 @@ gulp.task('watch', function() {
 });
 
 gulp.task('minify', function() {
-  var styles = gulp.src('.build/assets/*.css.liquid')
-    .pipe($.cleanCss())
+  var sass = gulp.src('theme/assets/scss/styles.scss')
+    .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
+    .pipe($.rename({extname: '.css.liquid'}))
     .pipe(gulp.dest('.build/assets'));
 
   var scripts = gulp.src('.build/assets/*.js.liquid')
@@ -75,7 +76,7 @@ gulp.task('minify', function() {
     ]))
     .pipe(gulp.dest('.build/assets'));
 
-  return merge(styles, scripts, images);
+  return merge(sass, scripts, images);
 });
 
 gulp.task('clean', function() {
@@ -91,7 +92,7 @@ gulp.task('compress', function() {
 gulp.task('default', ['scripts', 'sass', 'copy', 'watch']);
 
 gulp.task('build', function() {
-  runSequence(['scripts', 'sass', 'copy'], 'minify');
+  runSequence(['scripts', 'copy'], 'minify');
 });
 
 gulp.task('dist', function() {
