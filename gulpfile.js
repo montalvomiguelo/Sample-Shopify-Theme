@@ -96,5 +96,5 @@ gulp.task('build', function() {
 });
 
 gulp.task('dist', function() {
-  runSequence('clean', ['scripts', 'sass', 'copy'], 'minify', 'compress');
+  runSequence('clean', ['scripts', 'copy'], 'minify', 'compress');
 });
