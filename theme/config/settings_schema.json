@@ -113,8 +113,6 @@
         "type": "image",
         "id": "logo.png",
         "label": "Custom logo",
-        "max-width": 1300,
-        "max-height": 250,
         "info": "Good for an image up to 1300 by 250 pixels"
       },
       {
