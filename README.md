@@ -2,7 +2,7 @@
 
 * [Shopify Theme Scaffold](https://github.com/montalvomiguelo/shopify-theme-scaffold): A directory structure and Gulp used to build Shopify themes.
 
-* [Shopify Theme](https://github.com/Shopify/shopify_theme): A console tool for interacting with Shopify Theme Assets.
+* [Themekit](http://shopify.github.io/themekit/): Shopify theme interaction command line tool.
 
 # Author
 
