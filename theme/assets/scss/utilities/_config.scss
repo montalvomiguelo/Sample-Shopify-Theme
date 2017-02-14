@@ -20,9 +20,36 @@ $errorRedBg: #fff6f6;
 $successGreen: #63B726;
 $successGreenBg: #ecfef0;
 
-// Font stacks
-$bodyFontStack: #{'{{ settings.primary_font }}'};
-$headerFontStack: #{'{{ settings.secondary_font }}'};
+// Typography variables
+$bodyFontStack:
+  #{"{% if settings.type_base_family contains 'Google' %}"}
+    #{"{% assign type_base_parts = settings.type_base_family | split: '_' %}"}
+    #{"{% assign type_base_name = type_base_parts[1] %}"}
+    "#{"{{ type_base_name | split: ':' | first | replace: '+', ' ' }}"}"
+    #{"{% if type_base_parts.last == 'serif' %}, serif {% else %}"}, "HelveticaNeue", "Helvetica Neue", sans-serif#{"{% endif %}"}
+  #{"{% else %}"}
+    #{"{{ settings.type_base_family }}"}
+  #{"{% endif %}"}
+;
+
+$headerFontStack:
+  #{"{% if settings.type_header_family contains 'Google' %}"}
+    #{"{% assign type_header_parts = settings.type_header_family | split: '_' %}"}
+    #{"{% assign type_header_name = type_header_parts[1] %}"}
+    "#{"{{ type_header_name | split: ':' | first | replace: '+', ' ' }}"}"
+    #{"{% if type_header_parts.last == 'serif' %}, serif {% else %}"}, "HelveticaNeue", "Helvetica Neue", sans-serif#{"{% endif %}"}
+  #{"{% else %}"}
+    #{"{{ settings.type_header_family }}"}
+  #{"{% endif %}"}
+;
+
+$headerFontWeight:
+  #{"{% if settings.type_header_family contains 'Google' %}"}
+    #{"{{ type_header_parts[2] }}"}
+  #{"{% else %}"}
+  500
+  #{"{% endif %}"}
+;
 
 // Breakpoints and Grid Variables
 $viewportIncrement: 1px;
